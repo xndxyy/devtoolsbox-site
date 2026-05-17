@@ -1,4 +1,4 @@
-// World data - decompiled from re.maa-ai.com
+// Deployment trigger
 // 9 preset worlds + custom worlds handled by backend
 
 export interface Attribute {
