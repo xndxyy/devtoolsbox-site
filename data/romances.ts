@@ -1,5 +1,5 @@
-// 恋爱体验模式 - 恋爱对象数据定义
-// 每个对象代表一段不同风格的恋情，包含性格、相遇方式和叙事风格
+// Romance Experience Mode - Romance Partner Data Definitions
+// Each partner represents a different style of love story, with distinct personalities, meeting stories, and narrative styles
 
 export interface RomancePartner {
   id: string
@@ -8,15 +8,15 @@ export interface RomancePartner {
   description: string
   color: string
   maxAge: number
-  // 对方的性格特征
+  // The partner's personality traits
   personality: string
-  // 相遇方式
+  // How you meet
   meetStory: string
-  // 这段恋爱的叙事风格指南
+  // Narrative style guide for this romance
   romanceStyle: string
-  // 这段感情可能会面临的挑战
+  // Challenges this relationship may face
   challenges: string[]
-  // 恋爱各阶段参考
+  // Reference stages of the romance
   romanceStages: {
     stage: string
     ageRange: string
@@ -27,265 +27,265 @@ export interface RomancePartner {
 export const romancePartners: RomancePartner[] = [
   {
     id: 'childhood-sweetheart',
-    name: '青梅竹马',
+    name: 'Childhood Sweetheart',
     icon: '🌸',
-    description: '从小一起长大，对方是世界上最了解你的人。两小无猜的情谊在岁月中慢慢发酵成最深的爱恋。',
+    description: 'You grew up together, and this person knows you better than anyone in the world. The innocence of childhood friendship slowly ferments over the years into the deepest love.',
     color: '#ec407a',
     maxAge: 75,
-    personality: '温柔细腻、善解人意、有责任感。看似柔弱实则内心坚定，总在你需要的时候默默站在你身边。熟悉你的所有优点和缺点，知道什么时候该给你空间，什么时候该拉你一把。',
-    meetStory: '你们从小就认识——也许是邻居、也许是幼儿园同学、也许是父母朋友家的孩子。从穿开裆裤开始就是彼此的玩伴，一起上学、一起写作业、一起挨骂、一起长大。对方参与了你的整个童年和青春，是你生命中最重要的存在之一。',
-    romanceStyle: `核心主题：从友情到爱情的温柔蜕变，两个最熟悉彼此的人慢慢意识到对方有多重要。
-写作要点：
-- 少年期（0-18岁）：两小无猜的日常——一起上学、一起玩耍、互相保护。对方是"最好的朋友"定位，但总有那么几个瞬间会让心漏跳一拍。
-- 青春期（18-22岁）：开始面对感情的分岔路口——也许从友情到爱情的顿悟时刻，也许经历异地读书的考验。那种"原来我喜欢的人一直在身边"的恍然大悟。
-- 青年期（22-30岁）：确定关系后的甜蜜——在熟悉的相处中找到新的浪漫。一起为生活打拼，互相扶持。可能会经历见家长、订婚、同居等人生大事。
-- 中年期（30-45岁）：婚姻生活的酸甜苦辣——事业与家庭的平衡、孩子的教育、七年之痒的考验。但正是因为足够了解对方，所以能一起度过最难的时刻。
-- 成熟期（45岁+）：白首偕老的温暖——一起看夕阳、一起带孙辈、回想这一路走来的点点滴滴。那种"这辈子只有你最懂我"的踏实感。
-- 叙事语气：温暖细腻，带着岁月沉淀的质感。日常描写要有生活感（一起做饭、一起看电视、拌嘴又和好）。用第二人称"你"。`,
+    personality: 'Gentle, considerate, understanding, and responsible. Appears delicate but is actually strong-willed, always silently standing by your side when you need it most. Familiar with all your strengths and weaknesses, knowing when to give you space and when to pull you up.',
+    meetStory: 'You have known each other since childhood — maybe neighbors, maybe kindergarten classmates, maybe children of family friends. Playmates since you were in diapers, going to school together, doing homework together, getting scolded together, growing up together. This person has been part of your entire childhood and youth, one of the most important presences in your life.',
+    romanceStyle: `Core Theme: The gentle transformation from friendship to love, two people who know each other best slowly realizing how important the other truly is.
+Writing Guidelines:
+- Childhood (0-18 years): Innocent daily life — going to school together, playing together, protecting each other. This person is positioned as your "best friend," but there are always moments that make your heart skip a beat.
+- Adolescence (18-22 years): Beginning to face the crossroads of feelings — perhaps the epiphany of moving from friendship to love, or the test of studying in different cities. That sudden realization of "the person I like has been right here all along."
+- Young Adult (22-30 years): The sweetness after confirming the relationship — finding new romance in familiar companionship. Building a life together, supporting each other. May experience major life events like meeting the parents, engagement, or moving in together.
+- Middle Age (30-45 years): The bittersweetness of married life — balancing career and family, children's education, the test of the seven-year itch. But because you know each other well enough, you can get through the toughest times together.
+- Maturity (45+ years): The warmth of growing old together — watching sunsets, spending time with grandchildren, reminiscing about the journey together. That grounded feeling of "only you truly understand me in this life."
+- Narrative Tone: Warm and delicate, with a texture of time passing. Daily descriptions should feel lived-in (cooking together, watching TV, bickering and making up). Use second-person "you."`,
     challenges: [
-      '太熟悉反而缺乏恋爱中的新鲜感和激情',
-      '异地读书/工作带来的分离考验',
-      '家人过分期待带来的压力（"你们什么时候结婚？"）',
-      '七年之痒和中年危机',
+      'Being too familiar may lack the novelty and passion in romance',
+      'The test of separation due to studying/working in different cities',
+      'Pressure from family expectations ("When are you getting married?")',
+      'The seven-year itch and midlife crisis',
     ],
     romanceStages: [
-      { stage: '两小无猜', ageRange: '0-12岁', description: '一起长大的玩伴。分享童年的所有快乐和秘密，是彼此最信任的人。' },
-      { stage: '懵懂情愫', ageRange: '12-18岁', description: '青春期的情愫萌芽。从"最好的朋友"到"不只是朋友"的微妙转变。' },
-      { stage: '确定心意', ageRange: '18-25岁', description: '捅破那层窗户纸。从友情到爱情，两个最熟悉的人开始以恋人的身份相处。' },
-      { stage: '携手打拼', ageRange: '25-35岁', description: '一起为未来奋斗。事业起步、房子车子、组建家庭，用默契化解所有困难。' },
-      { stage: '相守余生', ageRange: '35-55岁', description: '婚姻的岁月静好与暗流涌动。在平凡的生活中守护彼此。' },
-      { stage: '白首偕老', ageRange: '55岁+', description: '儿孙绕膝，回忆往昔。这辈子最幸运的事，就是从小认识了你。' },
+      { stage: 'Innocent Companions', ageRange: '0-12', description: 'Playmates who grew up together. Sharing all the joys and secrets of childhood, the most trusted person to each other.' },
+      { stage: 'Budding Feelings', ageRange: '12-18', description: 'The sprouting of adolescent feelings. The subtle shift from "best friend" to "more than a friend."' },
+      { stage: 'Confessing Feelings', ageRange: '18-25', description: 'Breaking through that barrier. From friendship to love, two people who know each other best begin relating as lovers.' },
+      { stage: 'Building Together', ageRange: '25-35', description: 'Struggling for the future together. Career beginnings, houses and cars, starting a family — overcoming all difficulties with mutual understanding.' },
+      { stage: 'Growing Old Together', ageRange: '35-55', description: 'The calm and undercurrents of married life. Protecting each other through ordinary days.' },
+      { stage: 'White-Haired Companions', ageRange: '55+', description: 'Surrounded by children and grandchildren, reminiscing about the past. The luckiest thing in life was knowing you since childhood.' },
     ],
   },
   {
     id: 'campus-crush',
-    name: '校园白月光',
+    name: 'Campus Crush',
     icon: '📖',
-    description: '青春岁月里最纯粹的心动。那个让你在操场上偷偷多看一眼的人，是记忆中永远的白月光。',
+    description: 'The purest flutter of youth. The person you secretly stole glances at on the sports field, the eternal light of your memories.',
     color: '#42a5f5',
     maxAge: 70,
-    personality: '阳光开朗、品学兼优、待人真诚。在学校里是让人仰望的存在——也许成绩名列前茅、也许运动场上英姿飒爽、也许在文艺汇演上闪闪发光。但私下里其实也有柔软的一面，有只有你才知道的小秘密。',
-    meetStory: '那是一个再普通不过的校园日子——也许是新生入学的第一天，你在人群中多看了一眼；也许是图书馆里不经意的对视；也许是运动会上那个耀眼的身影。总之，就这么毫无预兆地，那个人闯入了你的世界。',
-    romanceStyle: `核心主题：纯真年代最美好的初恋，充满青春气息的怦然心动。
-写作要点：
-- 少年期（0-16岁）：普通的成长过程，但总有一些关于对方的"预兆"——也许小时候就见过一面、也许早就听过对方的名字。
-- 初遇期（16-18岁）：校园里的相识。可能是同桌、前后桌、同一个社团、一起准备竞赛。那些故意制造的偶遇、传纸条、一起放学、偷偷看着对方的侧脸发呆。
-- 热恋期（18-22岁）：确定关系后的甜蜜。一起约会、一起学习、一起憧憬未来。纯纯的牵手都会心跳加速，第一次约会紧张得说不出话。
-- 考验期（22-28岁）：毕业后面对现实的考验。异地恋、工作压力、生活方式的差异。是否还能保持初心？
-- 成熟期（28-40岁）：如果熬过了考验，就是最懂得珍惜彼此的人。从校园到婚纱，从懵懂到成熟。那些年少的承诺，最终都一一实现。
-- 回首期（40岁+）：青春已逝但爱仍在。看着对方眼角有了细纹，却觉得比当年更美。一起回学校看看，那些年一起走过的路依然在。
-- 叙事语气：清新纯真，带着青春特有的悸动和羞涩。校园场景要写出画面感（阳光透过树叶洒在课桌上、操场的晚风、图书馆的安静角落）。用第二人称"你"。`,
+    personality: 'Sunny, cheerful, excellent in character and learning, sincere with others. Someone admired at school — maybe top of the class, maybe outstanding on the sports field, maybe shining on the stage at school performances. But privately, there is a softer side, little secrets only you know.',
+    meetStory: 'It was an ordinary school day — maybe the first day of freshman orientation, and you took one extra glance in the crowd; maybe an accidental look in the library; maybe that dazzling figure on the sports field. However it happened, without any warning, that person walked into your world.',
+    romanceStyle: `Core Theme: The most beautiful first love of innocent times, full of youthful heart-fluttering excitement.
+Writing Guidelines:
+- Childhood (0-16 years): Ordinary growing up, but there are always some "omens" about this person — maybe you met once as children, maybe you heard their name long ago.
+- First Meeting (16-18 years): Meeting at school. Maybe deskmates, adjacent seats, same club, preparing for a competition together. Those deliberately engineered encounters, passing notes, walking home together, secretly gazing at their profile lost in thought.
+- Passionate Love (18-22 years): Sweetness after confirming the relationship. Dating together, studying together, dreaming of the future together. Even holding hands purely makes your heart race, the first date so nervous you can't speak.
+- Test Period (22-28 years): Facing the test of reality after graduation. Long-distance relationship, work pressure, differences in lifestyle. Can you still hold on to your original intentions?
+- Maturity (28-40 years): If you make it through the trials, you are the ones who cherish each other most. From campus to wedding dress, from innocence to maturity. Those youthful promises, all fulfilled one by one.
+- Reflection (40+ years): Youth has passed but love remains. Looking at the fine lines around their eyes, finding them even more beautiful than before. Going back to visit the school together — the paths you walked together are still there.
+- Narrative Tone: Fresh and innocent, with the unique throbbing and shyness of youth. Campus scenes should be vividly depicted (sunlight filtering through leaves onto desks, the evening breeze on the sports field, the quiet corners of the library). Use second-person "you."`,
     challenges: [
-      '暗恋的煎熬和表白勇气',
-      '高考/毕业等人生分岔路',
-      '异地恋的相思和考验',
-      '从校园到社会的身份转变',
+      'The agony of unrequited love and the courage to confess',
+      'Life crossroads like college entrance exams and graduation',
+      'The longing and trials of long-distance relationships',
+      'The identity transition from campus to society',
     ],
     romanceStages: [
-      { stage: '平凡童年', ageRange: '0-16岁', description: '普通的成长，但命运的红线早已悄悄系上。' },
-      { stage: '怦然心动', ageRange: '16-18岁', description: '校园里的初遇。那个阳光很好的午后，你第一次注意到教室里的那个人。' },
-      { stage: '纯真热恋', ageRange: '18-22岁', description: '最美好的大学时光。一起上课、一起泡图书馆、一起看遍校园的四季。' },
-      { stage: '现实考验', ageRange: '22-28岁', description: '走出象牙塔。异地、工作、压力——能否守护这份初心？' },
-      { stage: '从校服到婚纱', ageRange: '28-40岁', description: '年少时的承诺正在一一兑现。那个当年在操场上让你心动的人，成了共度一生的伴侣。' },
-      { stage: '青春不散场', ageRange: '40岁+', description: '回首青春，庆幸那个人一直都在。当年那个教室里的少年/少女，依然是你心中最美的风景。' },
+      { stage: 'Ordinary Childhood', ageRange: '0-16', description: 'Ordinary growing up, but the red thread of fate was already quietly tied.' },
+      { stage: 'Heart Flutter', ageRange: '16-18', description: 'First meeting at school. That sunny afternoon when you first noticed that person in the classroom.' },
+      { stage: 'Innocent Romance', ageRange: '18-22', description: 'The most beautiful university days. Attending class together, studying in the library together, watching the seasons change on campus together.' },
+      { stage: 'Reality Test', ageRange: '22-28', description: 'Stepping out of the ivory tower. Long-distance, work, pressure — can you protect this original heart?' },
+      { stage: 'From School to Wedding', ageRange: '28-40', description: 'The promises of youth are being fulfilled one by one. That person who made your heart flutter on the sports field back then has become your lifelong partner.' },
+      { stage: 'Youth Never Ends', ageRange: '40+', description: 'Looking back on youth, grateful that person has always been there. The boy/girl from that classroom back then is still the most beautiful sight in your heart.' },
     ],
   },
   {
     id: 'power-couple',
-    name: '职场精英',
+    name: 'Power Couple',
     icon: '💼',
-    description: '势均力敌的精英之恋。你是唯一能和他/她并肩而立的人，也是最值得他/她全力以赴的对手。',
+    description: 'An elite love between equals. You are the only one who can stand shoulder to shoulder with them, and the most worthy opponent they will ever face.',
     color: '#66bb6a',
     maxAge: 75,
-    personality: '自信从容、野心勃勃但不失温柔。在职场上是雷厉风行的强者，在爱人面前却有不为人知的一面。智商和情商都很高，喜欢旗鼓相当的对话。对专业领域有近乎偏执的追求，但也因此魅力十足。',
-    meetStory: '在某个重要的商务场合或行业会议上相遇——也许是你是甲方他是乙方、也许是同一个项目的竞争对手、也许是新来的同事恰好坐在你对面。第一次见面也许并不愉快（针锋相对），但对方的专业能力和从容姿态给你留下了深刻印象。',
-    romanceStyle: `核心主题：强强联手的精英之恋，从相杀到相爱的高级浪漫。
-写作要点：
-- 少年期（0-22岁）：各自精彩的成长轨迹。两个都在拼命努力变优秀的人，为日后在顶峰相见埋下伏笔。
-- 初遇期（22-28岁）：职场上的交集。一开始可能是竞争对手/合作伙伴/上下级。被对方的才华吸引，但又不想承认。
-- 暧昧期（28-32岁）：高手之间的博弈。每一次见面都像是一场智力较量，每一次对话都暗藏机锋。那种"你到底喜不喜欢我"的猜疑和试探，比任何恋爱都刺激。
-- 热恋期（32-38岁）：终于在一起的甜蜜。两个同样优秀的人在一起，不是谁依附谁，而是1+1>2。一起出差时顺便约会、一起讨论工作也讨论人生、在各自的领域闪闪发光。
-- 稳固期（38-50岁）：事业和家庭的双重经营者。可能一起创业、可能各自在行业巅峰。面对外界"太强了不好"的质疑，用事实证明强者之爱更加珍贵。
-- 巅峰期（50岁+）：行业传奇夫妇。功成名就后一起做慈善、一起环游世界、一起写回忆录。彼此是对方这辈子最精彩的"作品"。
-- 叙事语气：成熟高级，带点美剧那种势均力敌的张力。职场场景要专业，感情线要克制但不冷淡。用第二人称"你"。`,
+    personality: 'Confident and composed, ambitious but not without tenderness. A decisive force in the workplace, but with an unseen side before their loved one. High in both IQ and EQ, enjoys intellectually stimulating conversation. Has an almost obsessive pursuit of professional excellence, which makes them incredibly charming.',
+    meetStory: 'Meeting at some important business event or industry conference — maybe you\'re the client and they are the vendor, maybe competitors on the same project, maybe a new coworker who happens to sit across from you. The first meeting might not have been pleasant (clashing head-on), but their professional competence and composed demeanor left a lasting impression.',
+    romanceStyle: `Core Theme: An elite love between equals, high-end romance from rivalry to love.
+Writing Guidelines:
+- Childhood (0-22 years): Separate brilliant growth trajectories. Two people striving fiercely to become excellent, laying the groundwork for meeting at the peak later.
+- First Meeting (22-28 years): Intersecting in the workplace. Initially maybe competitors/partners/superior-subordinate. Attracted by each other's talent but unwilling to admit it.
+- Ambiguity Phase (28-32 years): A game between masters. Every meeting feels like an intellectual contest, every conversation loaded with subtext. That "do you like me or not" suspicion and testing is more thrilling than any romance.
+- Passionate Love (32-38 years): Sweetness after finally getting together. Two equally brilliant people together is not about dependency but 1+1>2. Dating while on business trips, discussing work and life together, each shining in their own field.
+- Stability Phase (38-50 years): Managing both career and family. Maybe starting a business together, each at the pinnacle of their industry. Facing outside doubts about being "too strong" by proving with facts that the love of the strong is even more precious.
+- Peak Phase (50+ years): Legendary power couple. After achieving success, doing philanthropy together, traveling the world together, writing memoirs together. Each other is the most brilliant "masterpiece" of their life.
+- Narrative Tone: Mature and sophisticated, with the tension of equals like in a TV drama. Workplace scenes should be professional, the romance line restrained but not cold. Use second-person "you."`,
     challenges: [
-      '工作太忙没时间谈恋爱',
-      '职场竞争可能影响感情',
-      '外界对"女强男弱"或"男强女弱"的偏见',
-      '强势性格之间的磨合和妥协',
+      'Too busy with work to have time for romance',
+      'Workplace competition may affect the relationship',
+      'Outside prejudice about "strong woman/weak man" or "strong man/weak woman" dynamics',
+      'Friction and compromise between strong personalities',
     ],
     romanceStages: [
-      { stage: '各自成长', ageRange: '0-22岁', description: '在各自的轨道上努力发光。两个优秀的人都在为"顶峰相见"做准备。' },
-      { stage: '顶峰相遇', ageRange: '22-28岁', description: '职场上的初次交锋。对方的专业和魅力让你无法移开视线。' },
-      { stage: '高手过招', ageRange: '28-32岁', description: '暧昧阶段的推拉。谁先表白谁就输了？还是两个聪明人最终放下防备。' },
-      { stage: '强强联手', ageRange: '32-40岁', description: '在一起后的全面升级。事业上互相成就，生活中彼此依靠。' },
-      { stage: '并肩而立', ageRange: '40-55岁', description: '各自成为行业顶尖。做彼此最坚实的后盾和最骄傲的存在。' },
-      { stage: '传奇人生', ageRange: '55岁+', description: '从合作伙伴到人生伴侣，用一生诠释什么叫"门当户对"的最高境界。' },
+      { stage: 'Separate Growth', ageRange: '0-22', description: 'Shining on your own tracks. Two outstanding people are both preparing to "meet at the peak."' },
+      { stage: 'Meeting at the Peak', ageRange: '22-28', description: 'First professional encounter. Their expertise and charm make it impossible to look away.' },
+      { stage: 'Masters Crossing Paths', ageRange: '28-32', description: 'The push-and-pull of the ambiguous stage. Whoever confesses first loses? Or two smart people finally let down their guard.' },
+      { stage: 'Power Duo', ageRange: '32-40', description: 'Total upgrade after getting together. Achieving greatness in career, relying on each other in life.' },
+      { stage: 'Standing Shoulder to Shoulder', ageRange: '40-55', description: 'Each becoming top in their industry. Being each other\'s strongest support and proudest presence.' },
+      { stage: 'Legendary Life', ageRange: '55+', description: 'From business partners to life partners, interpreting the highest level of "being well-matched" throughout a lifetime.' },
     ],
   },
   {
     id: 'romantic-artist',
-    name: '浪漫艺术家',
+    name: 'Romantic Artist',
     icon: '🎭',
-    description: '自由不羁的灵魂，用最独特的方式爱你。和这个人在一起，每一天都是冒险。',
+    description: 'A free-spirited soul who loves you in the most unique way. Every day with this person is an adventure.',
     color: '#ab47bc',
     maxAge: 70,
-    personality: '热情奔放、感性浪漫、追求自由。情绪丰富（偶尔戏剧化），对美和艺术有敏锐的感知力。不喜欢被规则束缚，做事全凭感觉。可能会忘记纪念日或约会迟到，但会突然带着一束花出现在你面前，只因为"今天天气很好，想见你"。',
-    meetStory: '相遇本身就像一场行为艺术——也许是在画展上被一幅画吸引，转头就和创作者四目相对；也许是在街头听到一段动人的音乐，走过去发现演奏者正在对你微笑；也许是在深夜的书店，两个人同时伸手去拿同一本书。',
-    romanceStyle: `核心主题：热烈而自由的浪漫之恋，充满艺术气息和意外惊喜的爱情冒险。
-写作要点：
-- 初遇期：命运的偶遇。相遇的场景充满戏剧性和命中注定的美感。第一次对话就让人心跳加速。
-- 热恋期：极致的浪漫。对方会用各种艺术的方式表达爱意——为你写诗、画你的肖像、在星空下即兴演奏、说走就走的旅行。每一天都有新的惊喜。
-- 磨合期：自由的代价。艺术家的不羁和现实生活的摩擦——经济压力、时间观念、情绪波动。你开始思考：浪漫能当饭吃吗？
-- 成熟期：理解了爱的真谛不是占有。给对方空间，也守住自己的底线。在自由和承诺之间找到平衡。
-- 相守期：浪漫从未消失，只是换了一种形式。当年那个可以一起疯的人，现在可以一起安静地看夕阳。那份热烈沉淀成了最深情的陪伴。
-- 叙事语气：诗意浪漫，带有强烈的画面感和情感张力。可以适当文艺但不要矫情。用第二人称"你"。`,
+    personality: 'Passionate, emotional, romantic, and freedom-seeking. Rich in emotion (occasionally dramatic), with a keen sensitivity to beauty and art. Dislikes being bound by rules, does everything by feeling. Might forget anniversaries or show up late, but will suddenly appear with a bouquet of flowers just because "the weather is nice today and I wanted to see you."',
+    meetStory: 'The meeting itself feels like performance art — maybe drawn to a painting at an exhibition, only to turn and lock eyes with the artist; maybe hearing a moving piece of street music and walking over to find the performer smiling at you; maybe in a late-night bookstore, both of you reaching for the same book at the same time.',
+    romanceStyle: `Core Theme: A passionate and free romance, an adventure full of artistic flair and unexpected surprises.
+Writing Guidelines:
+- First Meeting: A fateful encounter. The meeting scene is full of drama and destined beauty. First conversation makes the heart race.
+- Passionate Love: Ultimate romance. They express love through all kinds of artistic means — writing poems for you, painting your portrait, improvising under the stars, spontaneous trips. Every day brings new surprises.
+- Adjustment Phase: The price of freedom. Friction between the artist's free-spiritedness and real life — financial pressure, time management, emotional volatility. You start to wonder: can romance put food on the table?
+- Maturity: Understanding that the true essence of love is not possession. Giving each other space while holding your own boundaries. Finding balance between freedom and commitment.
+- Companionship: Romance never disappeared, just transformed into a different form. The person you could go wild with is now someone you can quietly watch the sunset with. That passion has settled into the deepest companionship.
+- Narrative Tone: Poetic and romantic, with strong visual imagery and emotional tension. Can be somewhat literary but not pretentious. Use second-person "you."`,
     challenges: [
-      '艺术家的不稳定性（经济/情绪）',
-      '自由和承诺的矛盾',
-      '现实生活与浪漫理想的冲突',
-      '对方太受欢迎带来的不安全感',
+      'The artist\'s instability (financial/emotional)',
+      'Conflict between freedom and commitment',
+      'Clash between real life and romantic ideals',
+      'Insecurity from the partner being too popular',
     ],
     romanceStages: [
-      { stage: '艺术前奏', ageRange: '0-20岁', description: '各自在艺术的道路上摸索。对方在用自己的方式感受世界。' },
-      { stage: '命运邂逅', ageRange: '20-26岁', description: '充满戏剧性的相遇。那个人以一种你从未想过的方式闯入了你的生活。' },
-      { stage: '热烈相爱', ageRange: '26-32岁', description: '最浪漫的时光。一起疯狂、一起流浪、在星空下许下最不切实际的诺言。' },
-      { stage: '现实磨合', ageRange: '32-40岁', description: '当浪漫遇到现实。艺术家的自由和世俗生活的碰撞。爱需要的不只是心动。' },
-      { stage: '自由与承诺', ageRange: '40-50岁', description: '在漫长的相处中找到彼此的节拍。那个人依然浪漫，只是浪漫的方式变深沉了。' },
-      { stage: '永恒的艺术品', ageRange: '50岁+', description: '用一生完成的最伟大的作品——就是你们的爱情。' },
+      { stage: 'Artistic Prelude', ageRange: '0-20', description: 'Each exploring their path in art. The other person is experiencing the world in their own way.' },
+      { stage: 'Fated Encounter', ageRange: '20-26', description: 'A dramatic meeting. That person enters your life in a way you never imagined.' },
+      { stage: 'Fervent Love', ageRange: '26-32', description: 'The most romantic time. Going crazy together, wandering together, making the most impractical promises under the stars.' },
+      { stage: 'Reality Adjustment', ageRange: '32-40', description: 'When romance meets reality. The collision of an artist\'s freedom with worldly life. Love needs more than just butterflies.' },
+      { stage: 'Freedom and Commitment', ageRange: '40-50', description: 'Finding each other\'s rhythm through the long years. That person is still romantic, just in a deeper way.' },
+      { stage: 'Eternal Artwork', ageRange: '50+', description: 'The greatest masterpiece completed over a lifetime — your love.' },
     ],
   },
   {
     id: 'sunshine-nextdoor',
-    name: '邻家阳光',
+    name: 'Sunshine Next Door',
     icon: '☀️',
-    description: '温暖得像冬天的太阳。这个人总能在你最需要的时候出现，用最平凡的日常治愈你的所有疲惫。',
+    description: 'Warm like the winter sun. This person always shows up when you need them most, healing all your exhaustion with the most ordinary daily life.',
     color: '#ffa726',
     maxAge: 75,
-    personality: '温暖治愈、乐观开朗、细心体贴。看似普通却有着让人安心的魔力。总记得你爱吃什么、怕什么、什么时候不开心。不会说什么惊天动地的情话，但会在你加班时送来热腾腾的夜宵，在你感冒时默默把药放在你门口。',
-    meetStory: '没有戏剧性的相遇，但就是那么自然地进入了你的生活——也许是搬新家时隔壁主动来打招呼的邻居、也许是常去的便利店那个总对你微笑的店员、也许是朋友聚会里那个不怎么说话但总在照顾大家的人。认识的时候没觉得有什么特别的，但不知不觉就被治愈了。',
-    romanceStyle: `核心主题：最平凡的日常里藏着最深的爱意，治愈系的温暖恋爱。
-写作要点：
-- 初识期：平淡但温暖的相识。对方就像一个永远带着阳光的人，不知不觉就照亮了你的生活。那些看似不经意的关心，其实都是蓄谋已久。
-- 暧昧期：日常中的小甜蜜。一起买菜、一起遛狗、一起看剧、互相蹭饭。没有什么轰轰烈烈，但每一个日常都让心越来越近。
-- 告白期：最朴实的告白。对方可能不会搞什么浪漫仪式，但一句"以后每天都想和你一起吃饭"比任何情话都动人。
-- 热恋期：平淡中的幸福。两个人的生活比一个人的时候更温暖。那些一起做饭、一起收拾房间、一起窝在沙发上的时光就是最好的爱情。
-- 考验期：生活中总有不顺心的事——工作压力、家庭变故、健康问题。但只要有对方在身边，再难的事也能扛过去。
-- 相守期：岁月静好。当初那个住在隔壁的人，成了这辈子最温暖的归宿。那种"有你真好"的感慨，每天都会在心里过一遍。
-- 叙事语气：温暖治愈，充满生活气息。日常琐事要写得有温度（一起逛超市、一起煮面、一起看天气预报）。不需要华丽的辞藻，真诚就是最动人的。用第二人称"你"。`,
+    personality: 'Warm and healing, optimistic and cheerful, attentive and considerate. Seemingly ordinary yet possesses a calming magic. Always remembers what you love to eat, what you fear, when you\'re unhappy. Won\'t say earth-shattering sweet nothings, but will bring you hot midnight snacks when you\'re working late, silently leave medicine at your door when you have a cold.',
+    meetStory: 'No dramatic meeting, but they just naturally entered your life — maybe the neighbor who proactively greeted you when you moved in, maybe the store clerk who always smiles at you at the convenience store you frequent, maybe the quiet person at a gathering who always takes care of everyone. Nothing felt special at first, but somehow you were healed without realizing it.',
+    romanceStyle: `Core Theme: The deepest love hides in the most ordinary daily life — a healing, warm romance.
+Writing Guidelines:
+- Getting Acquainted: Simple but warm meeting. This person is like someone who always carries sunshine, unknowingly brightening your life. Those seemingly casual acts of care were all thoughtfully planned.
+- Ambiguity Phase: Little sweetness in everyday life. Grocery shopping together, walking the dog together, watching shows together, sharing meals. Nothing earth-shattering, but every ordinary day brings hearts closer.
+- Confession Phase: The most down-to-earth confession. They might not do anything romantic, but a simple "I want to eat every meal with you from now on" is more touching than any sweet talk.
+- Passionate Love: Happiness in simplicity. Life with two people is warmer than life alone. Those moments of cooking together, cleaning up together, curling up on the couch together — that is the best kind of love.
+- Test Period: Life always has its rough patches — work pressure, family upheavals, health issues. But as long as they are by your side, even the hardest times can be endured.
+- Companionship: Peaceful years. That person who once lived next door has become the warmest home for life. That feeling of "it\'s so good to have you" passes through your heart every single day.
+- Narrative Tone: Warm and healing, full of the texture of everyday life. Mundane details should be written with warmth (grocery shopping together, cooking noodles together, watching the weather forecast together). No need for fancy words — sincerity is the most touching. Use second-person "you."`,
     challenges: [
-      '太平凡容易被忽视，需要用心感受对方的好',
-      '对方太会照顾人，可能被当成"好人卡"',
-      '关系进展太慢，缺乏激情',
-      '生活琐事消磨感情，需要主动制造惊喜',
+      'Too ordinary, easily overlooked — need to consciously feel their kindness',
+      'They are so caring they might be treated as a "nice person" — no romantic spark',
+      'Relationship progresses too slowly, lacking passion',
+      'Daily trivialities wear down feelings — need to actively create surprises',
     ],
     romanceStages: [
-      { stage: '平凡相遇', ageRange: '0-22岁', description: '普通的成长，普通的相遇。但有些人注定会在对的时间出现在对的地方。' },
-      { stage: '悄然靠近', ageRange: '22-26岁', description: '不知不觉就走进了彼此的生活。那些看似偶然的碰面，其实都是精心策划的日常。' },
-      { stage: '温暖的靠近', ageRange: '26-30岁', description: '不用说什么，一个眼神就懂。那种被人放在心上的感觉，比任何轰轰烈烈都让人安心。' },
-      { stage: '平淡的幸福', ageRange: '30-40岁', description: '结婚生子，柴米油盐。在别人眼里平淡无奇，但在你们心里就是最想要的生活。' },
-      { stage: '守护彼此', ageRange: '40-55岁', description: '经历风雨时，确定身边这个人就是最坚实的依靠。阳光不只在天晴时，也在这里。' },
-      { stage: '向阳而生', ageRange: '55岁+', description: '一辈子那么长，还好有你陪我一起慢慢变老。你还是那个温暖的阳光，我也是你的归途。' },
+      { stage: 'Ordinary Meeting', ageRange: '0-22', description: 'Ordinary growth, ordinary meeting. But some people are destined to appear at the right time in the right place.' },
+      { stage: 'Quietly Drawing Close', ageRange: '22-26', description: 'Unknowingly stepping into each other\'s lives. Those seemingly chance encounters are all carefully orchestrated everyday moments.' },
+      { stage: 'Warm Approach', ageRange: '26-30', description: 'No words needed — one glance and you understand. That feeling of being held in someone\'s heart is more reassuring than any grand gesture.' },
+      { stage: 'Simple Happiness', ageRange: '30-40', description: 'Getting married, having children, daily chores. Ordinary to others, but exactly the life you both want.' },
+      { stage: 'Protecting Each Other', ageRange: '40-55', description: 'When storms come, knowing this person beside you is your strongest anchor. Sunshine is not only in clear skies, but right here.' },
+      { stage: 'Growing Toward the Sun', ageRange: '55+', description: 'A lifetime is so long — thank goodness you are here to grow old with me. You\'re still that warm sunshine, and I am your home.' },
     ],
   },
   {
     id: 'bickering-lovers',
-    name: '欢喜冤家',
+    name: 'Bickering Lovers',
     icon: '⚡',
-    description: '从第一眼就看对方不顺眼。但不知道为什么，越吵越在意，越斗嘴越离不开。',
+    description: 'Couldn\'t stand each other from the very first glance. But somehow, the more you argue, the more you care — the more you bicker, the harder it is to let go.',
     color: '#ef5350',
     maxAge: 70,
-    personality: '傲娇毒舌、好胜心强、嘴上不饶人但心很软。表面上总是和你对着干，实际上比谁都关心你。非常别扭——明明想对你好，偏要说"我才不是特意给你买的"。聪明有趣，总能接住你的梗，吵架也吵得特别有水平。',
-    meetStory: '第一次见面就不愉快！也许是某个场合的误会、也许是朋友介绍时的互看不顺眼、也许是工作上被迫合作的冲突。总之，第一印象差到了极点。你心想：这世界上怎么会有这么讨厌的人？！——然后命运就让你们一次次地相遇。',
-    romanceStyle: `核心主题：从互相看不顺眼到谁也无法离开的欢喜冤家，充满张力和火花的另类浪漫。
-写作要点：
-- 初识期：充满火药味的相遇。每一次见面都是针锋相对，嘴上不留情。但在激烈的交锋中，你不得不承认对方确实有点东西。
-- 冤家期：被迫频繁接触——同事、同一个朋友圈、邻居。每次见面必吵架但又总被对方的机智逗笑。最经典的"嘴上说不喜欢身体很诚实"阶段。
-- 暧昧期：气氛开始微妙变化。开始留意对方的一举一动，看到对方和别人走得近会莫名其妙不爽。但仍然嘴硬，死不承认。
-- 告白期：最不按常理出牌的告白。可能是在一次吵得最凶的时候突然愣住了——"我好像……喜欢你。" 或者是在危急时刻下意识的保护暴露了真心。
-- 热恋期：最特别的情侣相处模式。别人秀恩爱，你们秀"吵架"。但每一次"吵完架"都更甜了。
-- 成熟期：默契已经不需要用争吵来表达了。一个眼神就知道对方在想什么。虽然偶尔还会斗嘴，但那是属于你们的相处方式。
-- 叙事语气：轻松幽默，对话要有来有回。吵架要有水平（聪明人的斗嘴不是泼妇骂街）。用第二人称"你"。`,
+    personality: 'Tsundere and sharp-tongued, competitive, tough with words but soft at heart. Always seems to be against you on the surface, but actually cares more than anyone. Very contradictory — clearly wants to be good to you, but insists "I didn\'t buy this for you on purpose." Smart and funny, always able to volley back your jokes, even arguing with style.',
+    meetStory: 'The first meeting was unpleasant! Maybe a misunderstanding at some event, maybe mutual dislike when introduced by friends, maybe a forced collaboration at work. In any case, the first impression was the worst possible. You thought: How can there be such an annoying person in this world?! — and then fate made you meet again and again.',
+    romanceStyle: `Core Theme: From mutual dislike to inseparable bickering lovers — an unconventional romance full of tension and sparks.
+Writing Guidelines:
+- Getting Acquainted: A meeting full of gunpowder. Every encounter is a head-on clash, no mercy with words. But amidst the fierce exchanges, you have to admit they\'ve got something.
+- Rival Phase: Forced frequent contact — coworkers, same social circle, neighbors. Arguments every time you meet, but always amused by their wit. The classic "mouth says dislike, body says otherwise" phase.
+- Ambiguity Phase: The atmosphere starts to shift subtly. You start noticing their every move, feel inexplicably annoyed when they get close to others. But still stubborn, refusing to admit it.
+- Confession Phase: The most unconventional confession. Maybe in the middle of your fiercest argument, suddenly freezing — "I think... I like you." Or unconsciously revealing true feelings through protective instincts in a moment of crisis.
+- Passionate Love: The most unique couple dynamic. Others flaunt romance, you flaunt "fighting." But every time you make up, it\'s sweeter than before.
+- Maturity: Understanding no longer needs to be expressed through arguments. One glance and you know what they\'re thinking. Though you still bicker occasionally, it\'s your unique way of being together.
+- Narrative Tone: Light and humorous, dialogue should be back-and-forth. Arguments should be clever (smart people\'s banter, not vulgar shouting matches). Use second-person "you."`,
     challenges: [
-      '吵架太伤害感情，需要学会适可而止',
-      '彼此太傲娇，不愿意低头',
-      '朋友不理解：你们到底是在谈恋爱还是打架？',
-      '习惯了争吵模式，不会用温柔的方式表达爱',
+      'Arguments hurt feelings — need to learn when to stop',
+      'Both too proud to back down',
+      'Friends don\'t understand: are you dating or fighting?',
+      'Used to the arguing dynamic, don\'t know how to express love gently',
     ],
     romanceStages: [
-      { stage: '冤家路窄', ageRange: '0-20岁', description: '各自成长，但命运早已安排了一场又一场的"偶遇"。' },
-      { stage: '初次交锋', ageRange: '20-24岁', description: '令人印象深刻的糟糕初遇。你从没见过这么讨厌的人——对方大概也是这么想的。' },
-      { stage: '相看两厌', ageRange: '24-28岁', description: '为什么总是在各种场合碰到你？！开始注意到对方那些烦人但不讨厌的小细节。' },
-      { stage: '口嫌体正直', ageRange: '28-32岁', description: '所有人都看出来你们喜欢对方了，只有你们自己还在嘴硬。"我怎么可能会喜欢那种人？！"——你摸着良心说这话你信吗？' },
-      { stage: '甜蜜互怼', ageRange: '32-45岁', description: '在一起之后的日常。吵吵闹闹但从不真正伤害对方。这是你们独有的爱情语言。' },
-      { stage: '老来拌嘴', ageRange: '45岁+', description: '一辈子都在斗嘴，但谁都离不开谁。下辈子还要找你吵架——但请下手轻一点。' },
+      { stage: 'Narrow Rivals', ageRange: '0-20', description: 'Growing up separately, but fate has already arranged one "encounter" after another.' },
+      { stage: 'First Clash', ageRange: '20-24', description: 'An impressively bad first meeting. You\'ve never met anyone so annoying — they probably think the same.' },
+      { stage: 'Mutual Annoyance', ageRange: '24-28', description: 'Why do I keep running into you everywhere?! Starting to notice those annoying but endearing little details about them.' },
+      { stage: 'Actions Speak Louder', ageRange: '28-32', description: 'Everyone can see you like each other, but you two are still being stubborn. "How could I possibly like that kind of person?!" — Hand on your heart, do you really believe that?' },
+      { stage: 'Sweet Bickering', ageRange: '32-45', description: 'Everyday life after getting together. Noisy and playful, but never truly hurting each other. This is your unique love language.' },
+      { stage: 'Old Age Squabbling', ageRange: '45+', description: 'Arguing for a lifetime, but neither can live without the other. I want to find you again in the next life to keep arguing — but please go easy on me.' },
     ],
   },
   {
     id: 'gentle-guardian',
-    name: '温柔守护者',
+    name: 'Gentle Guardian',
     icon: '🌙',
-    description: '沉默寡言却用行动说明一切。这个人不善言辞，但每一个细节都在说"我在这里"。',
+    description: 'Quiet and reserved but speaks volumes through actions. This person is not good with words, but every detail says "I\'m here."',
     color: '#5c6bc0',
     maxAge: 80,
-    personality: '沉稳内敛、话不多但行动力强、极度可靠。看起来可能有点冷、有点木讷，但心里比谁都清楚。你的每一个细节都被他/她记在心里。永远不会说什么好听的话，但在你需要的时候一定能找到他/她。是那种"只要他在就莫名安心"的人。',
-    meetStory: '你们认识的方式很普通，他/她也不是那种会让人一眼惊艳的类型。但你慢慢发现，这个人总能在你需要的时候出现——帮你捡起掉落的文件、在雨天默默递给你一把伞、在你加班到深夜时问一句"要不要顺路送你"。都是小事，但都很暖。',
-    romanceStyle: `核心主题：默不作声的爱最深沉，用行动书写的温柔恋歌。
-写作要点：
-- 相识期：平淡如水的交集。对方看起来有点距离感，但总在不经意间流露出温柔的一面。你开始注意到这个人其实特别细心。
-- 感应期：心照不宣的默契。你们之间有一种不用言说的默契——对方总能在你需要的时候出现，虽然从来不说"我是在关心你"。
-- 心动期：那些让人心动的瞬间。也许是发烧时对方二话不说背你去医院、也许是你说过的一句话被对方记了很久——你知道自己沦陷了。
-- 告白期：最笨拙也最真诚的告白。对方可能憋了半天就憋出一句"我喜欢你"然后脸红了。但你知道这三个字的分量。
-- 相恋期：他的爱都在细节里。你的杯子永远是满的、你怕冷所以他总是多带一件外套、你说的每个小愿望他都悄悄记着然后实现。爱情不是轰轰烈烈，而是点点滴滴。
-- 一生期：也许到老都不会说太多甜言蜜语，但牵了一辈子的手从没放开过。那种"有你在就很安心"的感觉，是这辈子最珍贵的礼物。
-- 叙事语气：含蓄内敛，动作描写多于心理描写。暖心的细节要突出。不太需要华丽的对话，因为这种人的爱都在行动里。用第二人称"你"。`,
+    personality: 'Calm and introverted, not talkative but extremely reliable. May seem a bit cold and reserved, but knows everything clearly inside. Every detail about you is kept in their heart. Will never say anything sweet, but will always be there when you need them. The kind of person who makes you inexplicably feel safe just by being there.',
+    meetStory: 'The way you met was very ordinary, and they weren\'t the type to impress at first glance. But gradually you noticed that they always showed up when you needed them — picking up fallen documents for you, silently handing you an umbrella on rainy days, asking "want a ride?" when you worked late. Small things, but all heartwarming.',
+    romanceStyle: `Core Theme: The deepest love is silent — a gentle love song written through actions.
+Writing Guidelines:
+- Getting Acquainted: Interactions as plain as water. They seem a bit distant, but occasionally show a gentle side. You start noticing they are actually especially attentive.
+- Connection Phase: Unspoken understanding. A wordless rapport between you — they always appear when you need them, though they never say "I\'m worried about you."
+- Heartflutter Phase: Those moments that make your heart skip. Maybe when they carry you to the hospital without a word when you have a fever, maybe something you said once that they remembered for a long time — you know you\'re done for.
+- Confession Phase: The most awkward yet sincere confession. They might struggle for ages and only manage to blurt out "I like you," then blush deeply. But you know the weight of those three words.
+- Loving Phase: Their love is in the details. Your cup is always full, they always bring an extra jacket because you get cold easily, every little wish you mention is quietly noted and fulfilled. Love is not about grand gestures, but the accumulation of small moments.
+- A Lifetime: Maybe they won\'t say many sweet words even in old age, but the hand they\'ve held for a lifetime has never let go. That feeling of "I feel safe because you\'re here" is the most precious gift of a lifetime.
+- Narrative Tone: Subtle and restrained, with more action descriptions than psychological descriptions. Heartwarming details should be emphasized. Fancy dialogue is not needed because this person\'s love is in their actions. Use second-person "you."`,
     challenges: [
-      '对方太沉默，沟通容易出问题',
-      '感受不到"被爱"的实感，因为对方不善于表达',
-      '需要主动的人来推动关系',
-      '误会积累多了对方也不会解释，可能憋出内伤',
+      'They are too silent, communication can be difficult',
+      'Hard to feel "loved" because they are not good at expressing it',
+      'Requires an active person to move the relationship forward',
+      'Misunderstandings pile up and they won\'t explain — may bottle things up inside',
     ],
     romanceStages: [
-      { stage: '各自沉默', ageRange: '0-22岁', description: '你和你未来的那个人都在各自成长。也许你们曾经擦肩而过却浑然不觉。' },
-      { stage: '悄然出现', ageRange: '22-26岁', description: '这个人就这样出现在了你的生活里。不高调、不显眼，但好像总在那里。' },
-      { stage: '无言守护', ageRange: '26-30岁', description: '那份默默的好终于被你发现了。虽然从不说"我喜欢你"，但整个世界都知道他/她喜欢你。' },
-      { stage: '说出口的爱', ageRange: '30-35岁', description: '那个从不表露的人终于鼓起勇气。笨拙的告白却是世界上最真诚的诺言。' },
-      { stage: '细水长流', ageRange: '35-50岁', description: '平淡但深厚的生活。爱不在话语里，在每一个清晨的温水、深夜的留灯、风雨中伸过来的伞柄。' },
-      { stage: '此生有你', ageRange: '50岁+', description: '一辈子很短，短到还没来得及好好说爱你。一辈子很长，长到每一个细节都在说我爱你。' },
+      { stage: 'Separate Silence', ageRange: '0-22', description: 'You and your future partner are each growing up. Maybe you\'ve passed by each other without even knowing.' },
+      { stage: 'Quiet Arrival', ageRange: '22-26', description: 'This person just appears in your life. Not loud, not conspicuous, but somehow always there.' },
+      { stage: 'Wordless Protection', ageRange: '26-30', description: 'Their silent kindness has finally been noticed by you. Though they never say "I like you," the whole world knows they do.' },
+      { stage: 'Love Spoken Aloud', ageRange: '30-35', description: 'The one who never expresses themselves finally finds the courage. An awkward confession is the most sincere promise in the world.' },
+      { stage: 'Steady and Deep', ageRange: '35-50', description: 'A simple but profound life. Love is not in words, but in every warm glass of water in the morning, the light left on late at night, the umbrella handle extended through wind and rain.' },
+      { stage: 'This Life With You', ageRange: '50+', description: 'A lifetime is too short — not enough time to properly say I love you. A lifetime is too long — every detail says I love you.' },
     ],
   },
   {
     id: 'fate-encounter',
-    name: '命中注定',
+    name: 'Fate\'s Encounter',
     icon: '✨',
-    description: '不是所有的相遇都叫缘分，但和这个人的相遇，就像是宇宙精心安排的剧本。',
+    description: 'Not every meeting is destiny, but meeting this person feels like a carefully scripted play by the universe.',
     color: '#26c6da',
     maxAge: 75,
-    personality: '神秘迷人、有独特的气质、肚子里总有讲不完的趣事和深刻的见解。看似随性实则很有自己的原则。喜欢旅行、阅读和一切未知的事物。有一种"见过世面"的从容和"不在乎世俗眼光"的洒脱。让你觉得这个人身上有永远探索不完的惊喜。',
-    meetStory: '你们的相遇充满了宿命感——也许是独自旅行时在异国他乡的偶遇、也许是在一个意想不到的地方（音乐节/深夜食堂/山顶看日出）不期而遇。总之，完全不在计划之中，而那个人出现的方式让你感觉"这一切都是安排好的"。',
-    romanceStyle: `核心主题：充满宿命感的浪漫邂逅，命运的齿轮因为一次相遇开始转动。
-写作要点：
-- 宿命前夕（0-22岁）：各自奇妙的成长轨迹。那些看似无关的经历（学的一门语言、养成的一个爱好）其实都是为遇见对方做的准备。
-- 命运相遇：充满电影感的初次邂逅。场景要独特、氛围要到位——"世界安静了一秒"的那种感觉。
-- 短暂分离后的追寻：也许相遇后因为各种原因分开了，但命运让你们再次寻找彼此。这可能是一场跨越城市甚至国界的追寻。
-- 确认彼此：再次见面时的确认——"原来我没有感觉错，我们之间确实有什么。" 那种灵魂被认出的感觉。
-- 相爱期：每一次约会都是新的冒险。对方总有奇怪又有趣的想法，每一天都像在拆礼物。但真实的生活也在挑战这种"偶像剧"般的爱情。
-- 相守期：当激情褪去，真正的爱情才开始。命运给了你们最浪漫的开头，但故事怎么写下去，掌握在你们自己手里。
-- 回首期：老了以后回想起来，还是觉得相遇的那天是这辈子最幸运的一天。"感谢那天我决定出门。"
-- 叙事语气：浪漫电影般的叙事感，带点诗意的宿命感。相遇场景要写得有画面感。用第二人称"你"。`,
+    personality: 'Mysterious and charming, with a unique aura, always full of fascinating stories and profound insights. Seems casual but has strong principles. Loves travel, reading, and everything unknown. Has the calm of someone who has "seen the world" and the freedom of "not caring about worldly opinions." Makes you feel like there are endless surprises to discover in them.',
+    meetStory: 'Your meeting is full of a sense of fate — maybe a chance encounter while traveling alone in a foreign country, maybe an unexpected meeting in an unlikely place (a music festival, a late-night diner, watching sunrise on a mountain top). Completely unplanned, and the way they appeared made you feel "everything was arranged."',
+    romanceStyle: `Core Theme: A romantic encounter full of a sense of destiny — the gears of fate begin to turn with a single meeting.
+Writing Guidelines:
+- Before Fate (0-22 years): Separate fascinating growth trajectories. Those seemingly unrelated experiences (a language learned, a hobby cultivated) were all preparation for meeting each other.
+- Fateful Meeting: A cinematic first encounter. The setting should be unique, the atmosphere just right — that feeling of "the world goes silent for a second."
+- Separation and Pursuit: Maybe you part ways after meeting for various reasons, but fate makes you seek each other out again. This might be a quest across cities or even borders.
+- Confirmation: Confirming when you meet again — "I wasn\'t wrong, there really is something between us." That feeling of your souls recognizing each other.
+- Loving Phase: Every date is a new adventure. They always have strange and interesting ideas, every day feels like unwrapping a gift. But real life also challenges this "romantic drama" kind of love.
+- Companionship: When the passion fades, true love begins. Fate gave you the most romantic beginning, but how the story continues is in your own hands.
+- Reflection: Looking back in old age, still feeling that day you met was the luckiest day of your life. "Thank goodness I decided to go out that day."
+- Narrative Tone: A romantic movie-like narrative, with a poetic sense of destiny. Meeting scenes should be written with vivid imagery. Use second-person "you."`,
     challenges: [
-      '太美好的开始让人担心是错觉',
-      '现实和"命运感"之间的落差',
-      '对方可能太飘忽不定（喜欢旅行/冒险）',
-      '如何维系这段被"命中注定"的关系，不让命运背锅',
+      'A too-perfect beginning makes you worry it\'s an illusion',
+      'The gap between reality and the "sense of fate"',
+      'The other person may be too elusive (loves travel/adventure)',
+      'How to sustain a relationship built on "destiny" without letting fate take the blame',
     ],
     romanceStages: [
-      { stage: '缘分的伏笔', ageRange: '0-22岁', description: '所有的过去都是为了遇见你。那些看似无关的经历，都是命运埋下的伏笔。' },
-      { stage: '命运相遇', ageRange: '22-26岁', description: '在一个意想不到的地方，遇到了一个意想不到的人。整个世界都停了一秒。' },
-      { stage: '追寻与重逢', ageRange: '26-28岁', description: '如果相遇是命运，那重逢就是选择。你开始相信，有些人是注定要遇见的。' },
-      { stage: '命定之爱', ageRange: '28-35岁', description: '在一起后发现，不只是宿命的安排。这个人值得我爱，不是命运决定的，是我决定的。' },
-      { stage: '书写故事', ageRange: '35-50岁', description: '命运给了相遇，但故事是我们自己写的。那些平凡的日子，因为身边的人而闪闪发光。' },
-      { stage: '感谢命运', ageRange: '50岁+', description: '这辈子最幸运的事，就是在某个平凡的日子里，遇见了不平凡的你。' },
+      { stage: 'Foreshadowing of Fate', ageRange: '0-22', description: 'Everything in the past was to meet you. Those seemingly unrelated experiences are all foreshadowing laid by fate.' },
+      { stage: 'Fateful Meeting', ageRange: '22-26', description: 'In an unexpected place, meeting an unexpected person. The whole world stops for a second.' },
+      { stage: 'Search and Reunion', ageRange: '26-28', description: 'If meeting is fate, then reunion is a choice. You start to believe that some people are destined to meet.' },
+      { stage: 'Destined Love', ageRange: '28-35', description: 'After getting together, you realize it\'s more than just destiny\'s arrangement. This person deserves my love — not because fate decided it, but because I decided it.' },
+      { stage: 'Writing the Story', ageRange: '35-50', description: 'Fate gave us the meeting, but the story is ours to write. Those ordinary days shine because of the person beside us.' },
+      { stage: 'Thanking Fate', ageRange: '50+', description: 'The luckiest thing in this life was meeting an extraordinary you on an ordinary day.' },
     ],
   },
 ]

@@ -1,18 +1,18 @@
-// 政治人生模式 - 政治路线数据定义
-// 每条路线参考真实政治人物的生涯轨迹，用于 AI 生成更有真实感的故事
+// Political Life Mode - Political Path Data Definitions
+// Each path references the career trajectories of real political figures, used by AI to generate more authentic stories
 
 export interface PoliticalPath {
   id: string
-  name: string        // 路线名称
+  name: string
   icon: string
   description: string
   color: string
   maxAge: number
-  // 路线核心理念
+  // Core philosophy of the path
   corePhilosophy: string
-  // 参考人物及其传记知识
+  // Reference figure and biographical knowledge
   biographySummary: string
-  // 路线的关键人生阶段
+  // Key life stages of the path
   lifeStages: {
     stage: string
     ageRange: string
@@ -23,168 +23,168 @@ export interface PoliticalPath {
 export const politicalPaths: PoliticalPath[] = [
   {
     id: 'business-to-politics',
-    name: '商界从政',
+    name: 'Business to Politics',
     icon: '🏦',
-    description: '在商界积累巨额财富和影响力后，转身进入政坛。用商业思维治国，用资本力量推动变革。',
+    description: 'After amassing vast wealth and influence in the business world, pivots into politics. Governs with a business mindset, drives change through capital power.',
     color: '#c62828',
     maxAge: 85,
-    corePhilosophy: '商人治国：商业成功证明能力，政治是更高层次的商业。谈判、交易、品牌塑造是核心技能。',
-    biographySummary: `参考人物：唐纳德·特朗普（Donald Trump）。
-生涯轨迹：房地产商人出身，继承父亲房地产业务后扩张至曼哈顿顶级地产，打造特朗普品牌（酒店、赌场、高尔夫球场、电视节目《学徒》）。2016年以政治素人身份参选美国总统，提出"让美国再次伟大"口号，击败希拉里·克林顿。执政风格：推特治国、反建制、美国优先、减税、贸易战。2020年连任失败但保持巨大政治影响力。
-关键能力：谈判术（《交易的艺术》）、媒体操作（制造话题、掌控舆论）、品牌营销、危机公关。
-典型特征：善于利用媒体曝光、直接对话基层支持者、不按传统政治规则出牌、个人品牌即政治品牌。`,
+    corePhilosophy: 'Businessman governance: business success proves capability; politics is business at a higher level. Negotiation, deal-making, and branding are core skills.',
+    biographySummary: `Reference figure: Donald Trump.
+Career trajectory: Born into real estate, inherited his father's business and expanded into Manhattan's top-tier properties, building the Trump brand (hotels, casinos, golf courses, TV show "The Apprentice"). In 2016, ran for US President as a political outsider with the slogan "Make America Great Again," defeating Hillary Clinton. Governing style: Twitter governance, anti-establishment, America First, tax cuts, trade wars. Lost re-election in 2020 but maintained enormous political influence.
+Key abilities: The Art of the Deal, media manipulation (creating buzz, controlling public opinion), brand marketing, crisis management.
+Typical traits: Adept at leveraging media exposure, directly engaging grassroots supporters, disregarding traditional political rules, personal brand equals political brand.`,
     lifeStages: [
-      { stage: '积累期', ageRange: '20-35岁', description: '在商业领域积累财富和经验。建立自己的企业帝国,打造个人品牌。' },
-      { stage: '转型期', ageRange: '35-45岁', description: '开始涉足公共事务。通过媒体曝光、慈善活动、政治捐款积累政治资本。' },
-      { stage: '起跑期', ageRange: '45-55岁', description: '正式进入政坛。参选公职,提出颠覆性的政治主张,吸引不满现状的选民。' },
-      { stage: '执政期', ageRange: '55-65岁', description: '掌权执政。推行自己的政策议程,与既有的政治体系博弈,经历弹劾、丑闻等考验。' },
-      { stage: '影响期', ageRange: '65-75岁', description: '连任或退位后继续发挥政治影响力。著书立说、培植接班人、影响政党走向。' },
-      { stage: '传承期', ageRange: '75岁+', description: '政治遗产的巩固。基金会、图书馆、家族政治王朝的延续。' },
+      { stage: 'Accumulation', ageRange: '20-35', description: 'Building wealth and experience in the business world. Establishing one\'s own corporate empire and personal brand.' },
+      { stage: 'Transition', ageRange: '35-45', description: 'Beginning to engage in public affairs. Accumulating political capital through media exposure, philanthropy, and political donations.' },
+      { stage: 'Launch', ageRange: '45-55', description: 'Formally entering politics. Running for public office, proposing disruptive political platforms, attracting voters dissatisfied with the status quo.' },
+      { stage: 'Governance', ageRange: '55-65', description: 'Holding power and governing. Implementing one\'s own policy agenda, navigating the existing political system, facing impeachment and scandals.' },
+      { stage: 'Influence', ageRange: '65-75', description: 'Continuing to wield political influence after re-election or stepping down. Writing books, cultivating successors, shaping the party\'s direction.' },
+      { stage: 'Legacy', ageRange: '75+', description: 'Consolidating political legacy. Foundations, libraries, continuation of a family political dynasty.' },
     ],
   },
   {
     id: 'rags-to-power',
-    name: '寒门奋斗',
+    name: 'Rags to Power',
     icon: '🌱',
-    description: '出身贫寒，靠个人奋斗和坚韧不拔的意志力，一步一步爬上权力的巅峰。每一步都是血泪铸就。',
+    description: 'Born into poverty, relying on personal struggle and indomitable willpower, climbing step by step to the pinnacle of power. Every step is forged with blood and tears.',
     color: '#6d4c41',
     maxAge: 85,
-    corePhilosophy: '奋斗改变命运：出身不是终点。教育、勤奋、抓住机遇、正直品格是上升的阶梯。',
-    biographySummary: `参考人物：李明博（韩国前总统）。
-生涯轨迹：1941年生于日本大阪，韩国光复后随家庭回国。父亲去世后家境极端贫困，小时候靠卖糕点、打工维持生计。白天上学，晚上做苦力。考入高丽大学商学院。大学期间参加学生运动被捕。毕业后进入现代建设公司，从基层职员做起——因工作拼命被称为"推土机"。29岁成为董事，36岁成为CEO，将现代建设发展为韩国最大建筑企业。1992年进入政界，当选国会议员。2002年当选首尔市长，推动清溪川修复工程（将高架桥拆除恢复河流，成为首尔地标）。2007年当选韩国总统，任内推动"绿色增长"战略。
-关键特质：极端勤奋（每天工作16小时）、执行力强（推土机风格）、从底层理解民生疾苦、危机管理能力突出。`,
+    corePhilosophy: 'Struggle changes fate: birth is not the end. Education, diligence, seizing opportunities, and integrity are the ladders of advancement.',
+    biographySummary: `Reference figure: Lee Myung-bak (former President of South Korea).
+Career trajectory: Born in Osaka, Japan in 1941, returned to Korea after liberation. After his father's death, the family lived in extreme poverty. As a child, he sold rice cakes and did manual labor to survive. He attended school during the day and worked as a laborer at night. He was accepted into Korea University's Business School. During college, he was arrested for participating in student protests. After graduation, he joined Hyundai Engineering & Construction as a rank-and-file employee — earning the nickname "Bulldozer" for his relentless work ethic. Became a director at 29, CEO at 36, and developed Hyundai into Korea's largest construction company. Entered politics in 1992, winning a seat in the National Assembly. Elected Mayor of Seoul in 2002, spearheaded the Cheonggyecheon restoration project (removing an elevated highway and restoring the stream, now a Seoul landmark). Elected President of South Korea in 2007, promoting the "Green Growth" strategy during his tenure.
+Key traits: Extreme diligence (16-hour workdays), strong execution (bulldozer style), understanding of ordinary people's hardships from the ground up, outstanding crisis management skills.`,
     lifeStages: [
-      { stage: '艰难童年', ageRange: '0-18岁', description: '家境极度贫寒。半工半读维持生计，同时保持优异学业。在逆境中磨练意志。' },
-      { stage: '求学奋斗', ageRange: '18-22岁', description: '考入大学。靠勤工俭学和奖学金完成学业。参与学生活动,建立人脉网络。' },
-      { stage: '职场崛起', ageRange: '22-35岁', description: '进入大企业/机构从基层做起。以超乎常人的勤奋和执行力快速晋升。建立业绩和声望。' },
-      { stage: '企业巅峰', ageRange: '35-50岁', description: '成为企业高管/行业领袖。参与重大国家项目,积累公共事务经验和政商关系。' },
-      { stage: '步入政坛', ageRange: '50-60岁', description: '转型从政。从市长/部长/议员做起,用管理经验治理城市/部门。打造标志性政绩。' },
-      { stage: '权力巅峰', ageRange: '60岁+', description: '竞选最高领导职位。执政期间推行自己的施政纲领。面对各种政治危机和挑战。' },
+      { stage: 'Harsh Childhood', ageRange: '0-18', description: 'Extreme family poverty. Working part-time while studying to make ends meet, maintaining excellent academic performance. Forging willpower through adversity.' },
+      { stage: 'Academic Struggle', ageRange: '18-22', description: 'Entering university. Completing studies through work-study and scholarships. Participating in student activities, building a network.' },
+      { stage: 'Career Rise', ageRange: '22-35', description: 'Joining a major company/institution at the entry level. Rapidly rising through extraordinary diligence and execution. Building track record and reputation.' },
+      { stage: 'Corporate Peak', ageRange: '35-50', description: 'Becoming a corporate executive/industry leader. Participating in major national projects, accumulating public affairs experience and government-business relationships.' },
+      { stage: 'Entering Politics', ageRange: '50-60', description: 'Transitioning into politics. Starting as mayor/minister/legislator, applying management experience to govern cities/departments. Creating landmark achievements.' },
+      { stage: 'Pinnacle of Power', ageRange: '60+', description: 'Campaigning for the highest leadership position. Implementing one\'s own governing agenda during tenure. Facing various political crises and challenges.' },
     ],
   },
   {
     id: 'technocrat',
-    name: '技术官僚',
+    name: 'Technocrat',
     icon: '📋',
-    description: '以专业知识和行政管理能力立身，在体制内逐级晋升。每一次提拔都来自出色的治理实绩。',
+    description: 'Rising through professional expertise and administrative competence, advancing step by step within the system. Every promotion comes from outstanding governance performance.',
     color: '#1565c0',
     maxAge: 80,
-    corePhilosophy: '专业治国：治理国家需要专业知识和管理能力。从基层做起，用实绩说话，按规则晋升。',
-    biographySummary: `参考人物：李显龙（新加坡前总理）。 
-生涯轨迹：李光耀长子。剑桥大学数学一等荣誉学位（数学天才,毕业成绩排名第一）。后获哈佛大学公共管理硕士。1971年加入新加坡武装部队,1984年升准将,是新加坡最年轻的准将之一。1984年辞职从政,当选国会议员。历任贸工部长、财政部长、副总理等要职。2004年接任总理至2024年,掌舵新加坡20年。执政风格：冷静理性、数据驱动、长远规划、务实主义。推动经济转型、住房政策、双语教育、人口政策、智慧国计划。
-关键特质：学术天才级智商、系统思维、危机管理（1997亚洲金融风暴、2008全球金融危机、COVID-19）、长远战略眼光、廉洁正直的公仆形象。`,
+    corePhilosophy: 'Professional governance: governing a nation requires professional knowledge and management skills. Start from the grassroots, let results speak, and follow the rules of promotion.',
+    biographySummary: `Reference figure: Lee Hsien Loong (former Prime Minister of Singapore).
+Career trajectory: Eldest son of Lee Kuan Yew. First-class honors degree in Mathematics from the University of Cambridge (math prodigy, graduating top of his class). Later earned a Master's in Public Administration from Harvard University. Joined the Singapore Armed Forces in 1971, promoted to Brigadier General in 1984 — one of the youngest in Singapore. Left the military and entered politics in 1984, winning a seat in Parliament. Served as Minister for Trade and Industry, Minister for Finance, and Deputy Prime Minister. Became Prime Minister in 2004 and served until 2024, steering Singapore for 20 years. Governing style: calm and rational, data-driven, long-term planning, pragmatism. Promoted economic transformation, housing policy, bilingual education, population policy, and the Smart Nation initiative.
+Key traits: Genius-level academic intellect, systems thinking, crisis management (1997 Asian Financial Crisis, 2008 Global Financial Crisis, COVID-19), long-term strategic vision, clean and upright public servant image.`,
     lifeStages: [
-      { stage: '精英教育', ageRange: '10-22岁', description: '在顶尖学府接受精英教育。以优异成绩毕业,培养系统思维和分析能力。' },
-      { stage: '专业起步', ageRange: '22-30岁', description: '进入专业领域（学术/军事/公务员/技术）。展现卓越的专业能力,获得早期认可。' },
-      { stage: '快速晋升', ageRange: '30-40岁', description: '凭借专业能力和领导才华快速晋升。从执行者转型为管理者,开始参与政策制定。' },
-      { stage: '独当一面', ageRange: '40-50岁', description: '担任部长级/高级管理职务。主管一个或多个领域,推动重大改革,建立政绩。' },
-      { stage: '掌舵全局', ageRange: '50-65岁', description: '成为最高领导层核心成员。参与国家/地区重大决策,面对经济危机、地缘政治等挑战。' },
-      { stage: '传承交接', ageRange: '65岁+', description: '和平交接权力。以顾问/资政身份发挥余热,确保治理体系持续运转。' },
+      { stage: 'Elite Education', ageRange: '10-22', description: 'Receiving elite education at top institutions. Graduating with outstanding results, cultivating systems thinking and analytical ability.' },
+      { stage: 'Professional Start', ageRange: '22-30', description: 'Entering a professional field (academia/military/civil service/technology). Demonstrating exceptional professional capability, gaining early recognition.' },
+      { stage: 'Fast Promotion', ageRange: '30-40', description: 'Rising quickly through professional skill and leadership talent. Transitioning from executor to manager, beginning to participate in policy-making.' },
+      { stage: 'Standing Alone', ageRange: '40-50', description: 'Serving in ministerial/senior management roles. Overseeing one or more domains, driving major reforms, establishing track record.' },
+      { stage: 'Steering the Ship', ageRange: '50-65', description: 'Becoming a core member of top leadership. Participating in major national/regional decisions, facing challenges such as economic crises and geopolitics.' },
+      { stage: 'Transition and Handover', ageRange: '65+', description: 'Peaceful transfer of power. Continuing to contribute as advisor/elder statesman, ensuring the governance system keeps running.' },
     ],
   },
   {
     id: 'diplomat',
-    name: '外交生涯',
+    name: 'Diplomatic Career',
     icon: '🌐',
-    description: '从外交官做起，在国际舞台上纵横捭阖。用谈判术和战略视野为国争取利益。',
+    description: 'Starting as a diplomat, maneuvering on the international stage with skill. Using negotiation tactics and strategic vision to advance national interests.',
     color: '#00838f',
     maxAge: 80,
-    corePhilosophy: '外交即国运：在国际博弈中维护国家利益。谈判、联盟、战略克制、软实力是核心工具。',
-    biographySummary: `参考人物：亨利·基辛格（Henry Kissinger）、科菲·安南（Kofi Annan）。
-基辛格轨迹：德国犹太难民移民美国。在哈佛大学攻读政治学博士学位,论文研究梅特涅和卡斯尔雷。学术生涯后在1969年受邀出任国家安全顾问,后兼任国务卿。主导中美关系破冰（1971年秘密访华）、美苏缓和、越南战争谈判（获诺贝尔和平奖）。写有《论中国》《世界秩序》等重要著作。
-安南轨迹：加纳人,在美国明尼苏达州求学,后在日内瓦国际关系学院深造。1962年进入联合国工作,从基层做起,经历联合国几乎所有部门。1997年当选联合国秘书长,两任至2006年。任内推动联合国改革、维和行动、千年发展目标。2001年获诺贝尔和平奖。
-关键特质：深厚的战略思维、跨文化沟通能力、耐心和坚韧、在复杂博弈中找到共赢点、文字和口才杰出。`,
+    corePhilosophy: 'Diplomacy is national destiny: safeguarding national interests amid international competition. Negotiation, alliances, strategic restraint, and soft power are the core tools.',
+    biographySummary: `Reference figures: Henry Kissinger, Kofi Annan.
+Kissinger's trajectory: German Jewish refugee who immigrated to the US. Earned a Ph.D. in Political Science at Harvard University, studying Metternich and Castlereagh. After an academic career, was invited in 1969 to serve as National Security Advisor, later also as Secretary of State. Led the thaw in US-China relations (secret visit to China in 1971), US-Soviet détente, and Vietnam War negotiations (awarded the Nobel Peace Prize). Authored important works including "On China" and "World Order."
+Annan's trajectory: Ghanaian, studied at Macalester College in Minnesota and later at the Graduate Institute of International Studies in Geneva. Joined the United Nations in 1962, working from entry level through nearly every UN department. Elected UN Secretary-General in 1997, serving two terms until 2006. During his tenure, promoted UN reform, peacekeeping operations, and the Millennium Development Goals. Awarded the Nobel Peace Prize in 2001.
+Key traits: Deep strategic thinking, cross-cultural communication skills, patience and resilience, finding win-win outcomes in complex negotiations, outstanding writing and oratory.`,
     lifeStages: [
-      { stage: '语言启蒙', ageRange: '10-18岁', description: '培养多语言能力和跨文化兴趣。大量阅读历史和国际关系,参加模拟联合国。' },
-      { stage: '学术积累', ageRange: '18-25岁', description: '在国际关系、法律、经济等领域深造。考取外交官资格或进入国际组织实习。' },
-      { stage: '初入外交', ageRange: '25-35岁', description: '从驻外使领馆基层做起。处理签证、领事保护、双边关系日常事务。积累谈判经验。' },
-      { stage: '谈判历练', ageRange: '35-45岁', description: '参与重大国际谈判和危机处理。在多边场合（联合国/峰会）为国发声,建立个人声望。' },
-      { stage: '外交核心', ageRange: '45-60岁', description: '担任驻外大使/外交部高层。主导重大外交政策,处理国际危机,塑造国家外交战略。' },
-      { stage: '全球舞台', ageRange: '60岁+', description: '担任联合国/国际组织高级职务。或成为国际事务顾问、学者。著书立说,影响下一代。' },
+      { stage: 'Language Foundation', ageRange: '10-18', description: 'Developing multilingual ability and cross-cultural interest. Reading extensively on history and international relations, participating in Model UN.' },
+      { stage: 'Academic Accumulation', ageRange: '18-25', description: 'Pursuing advanced study in international relations, law, economics, etc. Qualifying as a diplomat or interning at an international organization.' },
+      { stage: 'Entry into Diplomacy', ageRange: '25-35', description: 'Starting from entry-level posts at embassies/consulates abroad. Handling visas, consular protection, and day-to-day bilateral relations. Accumulating negotiation experience.' },
+      { stage: 'Negotiation Refinement', ageRange: '35-45', description: 'Participating in major international negotiations and crisis management. Speaking for the nation at multilateral venues (UN/summits), building personal reputation.' },
+      { stage: 'Diplomatic Core', ageRange: '45-60', description: 'Serving as ambassador/senior foreign ministry official. Steering major foreign policy, handling international crises, shaping national diplomatic strategy.' },
+      { stage: 'Global Stage', ageRange: '60+', description: 'Serving in senior UN/international organization roles. Or becoming an international affairs advisor or scholar. Writing books, influencing the next generation.' },
     ],
   },
   {
     id: 'grassroots-cadre',
-    name: '基层干部',
+    name: 'Grassroots Cadre',
     icon: '🏘️',
-    description: '从最基层的乡镇做起，一步一个脚印。了解民间疾苦，在基层治理中磨砺出真正的执政能力。',
+    description: 'Starting from the lowest levels of township government, step by step. Understanding the suffering of the people, forging true governing capability through grassroots administration.',
     color: '#2e7d32',
     maxAge: 75,
-    corePhilosophy: '基层出真知：了解人民才能真正服务人民。在基层工作中磨练群众工作能力和解决实际问题的能力。',
-    biographySummary: `参考人物：焦裕禄（中国县委书记榜样）。
-生涯轨迹：1922年生于山东贫苦农民家庭。早年做过长工。1946年加入中国共产党。先后在河南多地工作,曾任尉氏县委书记。1962年被派往兰考县任县委书记——当时兰考正遭受严重的内涝、风沙、盐碱三害。在兰考的475天里,他拖着患有肝癌的身体,靠一辆自行车和一双脚跑遍全县120多个大队。带领群众栽泡桐治沙、挖河渠排涝、改良盐碱地。1964年病逝,年仅42岁。死后人们在他枕头下发现一本《毛泽东选集》。
-关键特质：深入群众（住在农民家里了解实情）、实干精神（亲自下地干活）、廉洁自律（不搞特殊化）、敢于担当（在最困难的地方工作）、舍己为民（带病工作到生命最后一刻）。
-现代参考：优秀基层干部如各地的驻村第一书记、乡镇党委书记,在扶贫攻坚、乡村振兴中涌现出大量感人事迹。`,
+    corePhilosophy: 'Grassroots bring true knowledge: only by understanding the people can you truly serve them. Hone mass work skills and practical problem-solving abilities in grassroots work.',
+    biographySummary: `Reference figure: Jiao Yulu (model Party secretary in China).
+Career trajectory: Born in 1922 into a poor farming family in Shandong. Worked as a farmhand in his youth. Joined the Chinese Communist Party in 1946. Worked in multiple locations in Henan Province, serving as Party secretary of Weishi County. In 1962, was sent to Lankao County as Party secretary — at a time when Lankao was suffering from severe flooding, sandstorms, and salinization. During his 475 days in Lankao, despite suffering from liver cancer, he traveled by bicycle and on foot across all 120+ production brigades. Led the people in planting paulownia trees to control sand, digging canals for drainage, and improving saline-alkali land. Died in 1964 at age 42. After his death, a copy of "Selected Works of Mao Zedong" was found under his pillow.
+Key traits: Deep connection with the people (staying in farmers' homes to understand the real situation), pragmatic spirit (personally working in the fields), incorruptible self-discipline (no special privileges), willingness to take responsibility (working in the most difficult places), self-sacrifice for the people (working through illness until his last moment).
+Modern reference: Outstanding grassroots cadres such as first Party secretaries stationed in villages and township Party secretaries across the country, who have emerged with numerous touching stories in poverty alleviation and rural revitalization.`,
     lifeStages: [
-      { stage: '贫苦童年', ageRange: '0-18岁', description: '生于基层,深知民间疾苦。对普通百姓的生活有切身体会。' },
-      { stage: '参加工作', ageRange: '18-25岁', description: '进入基层单位工作。从办事员做起,处理日常行政事务,学习群众工作方法。' },
-      { stage: '深入基层', ageRange: '25-35岁', description: '担任乡镇/街道领导职务。主政一方,解决群众实际困难。打井修路、扶贫助困、调解纠纷。' },
-      { stage: '攻坚克难', ageRange: '35-45岁', description: '被派往最困难/最落后的地区任职。带领群众改变面貌,推动脱贫和发展。' },
-      { stage: '独当一面', ageRange: '45-55岁', description: '担任县级/地市级领导。统筹区域发展,推动系统性改革。培养年轻干部。' },
-      { stage: '传承经验', ageRange: '55岁+', description: '以丰富基层经验指导后辈。著书总结基层工作方法。退居二线后依然关心民生。' },
+      { stage: 'Impoverished Childhood', ageRange: '0-18', description: 'Born at the grassroots, deeply aware of the people\'s hardships. Having firsthand experience of ordinary people\'s lives.' },
+      { stage: 'Starting Work', ageRange: '18-25', description: 'Entering a grassroots work unit. Starting as a clerk, handling daily administrative affairs, learning mass work methods.' },
+      { stage: 'Deep in the Grassroots', ageRange: '25-35', description: 'Serving in a township/subdistrict leadership role. Governing a local area, solving practical difficulties for the people. Digging wells, building roads, helping the poor, mediating disputes.' },
+      { stage: 'Tackling Difficulties', ageRange: '35-45', description: 'Being assigned to the most difficult/underdeveloped areas. Leading the people to change the landscape, advancing poverty alleviation and development.' },
+      { stage: 'Standing Alone', ageRange: '45-55', description: 'Serving as county/prefectural-level leadership. Coordinating regional development, driving systemic reforms. Cultivating younger cadres.' },
+      { stage: 'Passing on Experience', ageRange: '55+', description: 'Guiding the next generation with rich grassroots experience. Writing books summarizing grassroots work methods. Still caring about people\'s welfare after stepping back.' },
     ],
   },
   {
     id: 'reform-pioneer',
-    name: '改革先锋',
+    name: 'Reform Pioneer',
     icon: '⚡',
-    description: '在旧体制中发现弊端，以非凡勇气推动变革。打破利益藩篱，为国家和人民开辟新路。',
+    description: 'Identifying flaws in the old system and driving change with extraordinary courage. Breaking through entrenched interests, carving a new path for the nation and its people.',
     color: '#e65100',
     maxAge: 85,
-    corePhilosophy: '改革是发展的动力：敢于打破既得利益,敢于尝试新的制度和模式。改革者必须有坚定的信念和政治智慧。',
-    biographySummary: `参考人物：邓小平、戈尔巴乔夫（Mikhail Gorbachev）。
-邓小平轨迹：16岁赴法国勤工俭学。革命战争年代是军事指挥官。新中国成立后历任副总理、总书记。"文革"期间被下放江西。1977年复出后主导改革开放——"不管白猫黑猫,抓住老鼠就是好猫"。废除人民公社、建立经济特区、恢复高考、裁军百万、提出"一国两制"。1992年南巡讲话再次推动改革深化。改变了中国和世界。
-戈尔巴乔夫轨迹：苏联最后一位领导人。出身农民家庭,在莫斯科大学学法律。从基层共青团工作做起,一路晋升至苏共总书记。推行"改革(Perestroika)"和"公开(Glasnost)"政策。终结冷战、从东欧撤军、与西方和解。但改革最终导致苏联解体。
-关键特质：战略眼光（看准大方向）、政治勇气（敢于触碰核心利益）、实用主义（不教条）、改革节奏感（时机和火候把握）、面对争议不动摇。`,
+    corePhilosophy: 'Reform is the engine of development: dare to break established interests, dare to experiment with new systems and models. Reformers must possess firm conviction and political wisdom.',
+    biographySummary: `Reference figures: Deng Xiaoping, Mikhail Gorbachev.
+Deng Xiaoping's trajectory: Went to France at age 16 on a work-study program. Served as a military commander during the revolutionary war years. After the founding of the PRC, held posts including Vice Premier and General Secretary. Was sent to Jiangxi for manual labor during the Cultural Revolution. After his comeback in 1977, led the Reform and Opening Up — "It doesn't matter whether the cat is black or white, as long as it catches mice." Abolished the People's Commune system, established Special Economic Zones, restored the college entrance exam (Gaokao), demobilized a million troops, proposed "One Country, Two Systems." The 1992 Southern Tour speech further deepened reforms. Transformed China and the world.
+Gorbachev's trajectory: The last leader of the Soviet Union. Born to a peasant family, studied law at Moscow State University. Rose through grassroots Komsomol work all the way to General Secretary of the CPSU. Introduced Perestroika (restructuring) and Glasnost (openness) policies. Ended the Cold War, withdrew troops from Eastern Europe, reconciled with the West. But the reforms ultimately led to the dissolution of the Soviet Union.
+Key traits: Strategic vision (seeing the big direction), political courage (daring to touch core interests), pragmatism (not dogmatic), sense of reform timing (grasping the right moment), unwavering in the face of controversy.`,
     lifeStages: [
-      { stage: '早期经历', ageRange: '0-25岁', description: '经历社会变革时期。对旧体制的弊端有切身体会,萌生改革理念。' },
-      { stage: '体制内积累', ageRange: '25-40岁', description: '在现有体制内逐步晋升。深入了解制度运作的方方面面,积累改革所需的经验和人脉。' },
-      { stage: '改革酝酿', ageRange: '40-50岁', description: '在负责的领域内进行小规模试点改革。检验改革思路,积累改革经验,形成改革团队。' },
-      { stage: '全面推动', ageRange: '50-65岁', description: '进入最高决策层,推动系统性改革。打破既得利益,面对保守派阻力,需要高超的政治智慧。' },
-      { stage: '巩固深化', ageRange: '65-75岁', description: '改革成果巩固期。防止改革倒退,培养改革接班人,将改革制度化。' },
-      { stage: '历史评价', ageRange: '75岁+', description: '改革遗产的沉淀。随着时间的推移,改革的成败得失逐渐清晰。' },
+      { stage: 'Early Experience', ageRange: '0-25', description: 'Living through a period of social change. Having firsthand experience of the old system\'s shortcomings, conceiving reform ideas.' },
+      { stage: 'Within-System Accumulation', ageRange: '25-40', description: 'Gradually rising within the existing system. Deeply understanding all aspects of institutional operation, accumulating the experience and connections needed for reform.' },
+      { stage: 'Reform Incubation', ageRange: '40-50', description: 'Conducting small-scale pilot reforms within one\'s responsible domain. Testing reform ideas, accumulating experience, forming a reform team.' },
+      { stage: 'Full-Scale Push', ageRange: '50-65', description: 'Entering top decision-making circles, driving systemic reforms. Breaking entrenched interests, facing resistance from conservatives, requiring superb political skill.' },
+      { stage: 'Consolidation and Deepening', ageRange: '65-75', description: 'Period of consolidating reform gains. Preventing reform backsliding, cultivating reform successors, institutionalizing reforms.' },
+      { stage: 'Historical Assessment', ageRange: '75+', description: 'The settling of reform legacy. Over time, the successes and failures of reform become gradually clear.' },
     ],
   },
   {
     id: 'revolutionary',
-    name: '革命斗士',
+    name: 'Revolutionary Fighter',
     icon: '✊',
-    description: '面对不公和压迫，选择拿起武器或走上街头。用鲜血和生命为理想开路，从地下走向台前。',
+    description: 'Faced with injustice and oppression, choosing to take up arms or take to the streets. Paving the way with blood and sacrifice, moving from underground to center stage.',
     color: '#b71c1c',
     maxAge: 80,
-    corePhilosophy: '不自由毋宁死：当体制无法通过和平手段改变时，革命是最后的选择。信念、牺牲、组织是革命者的武器。',
-    biographySummary: `参考人物：纳尔逊·曼德拉（Nelson Mandela）、菲德尔·卡斯特罗（Fidel Castro）。
-曼德拉轨迹：南非特兰斯凯部落王子之子。1944年加入非洲人国民大会（ANC）,领导反对种族隔离制度的抗议活动。1962年被捕,1964年在"利沃尼亚审判"中被判终身监禁。在罗本岛监狱服刑18年,即使在狱中也坚持学习、锻炼、与狱友讨论。1990年获释,1993年获诺贝尔和平奖,1994年当选南非首位黑人总统。倡导民族和解而非复仇,成立"真相与和解委员会"。
-卡斯特罗轨迹：古巴富家子弟,在哈瓦那大学学法律。1953年领导攻打蒙卡达兵营失败,被捕后在法庭上自我辩护（"历史将宣判我无罪"）。流亡墨西哥期间结识切·格瓦拉。1956年率82人乘"格拉玛号"回古巴,在山丘打游击。1959年推翻巴蒂斯塔政权。执政近50年,面对美国制裁、猪湾入侵、古巴导弹危机。
-关键特质：坚定的信念、超凡的个人魅力、在逆境中不屈不挠、强大的组织和动员能力、为理想付出一切的勇气。`,
+    corePhilosophy: 'Give me liberty or give me death: when the system cannot be changed through peaceful means, revolution is the last resort. Faith, sacrifice, and organization are the weapons of revolutionaries.',
+    biographySummary: `Reference figures: Nelson Mandela, Fidel Castro.
+Mandela's trajectory: Son of a Thembu tribal chief in South Africa. Joined the African National Congress (ANC) in 1944, leading protests against apartheid. Arrested in 1962, sentenced to life imprisonment in the 1964 Rivonia Trial. Served 18 years on Robben Island, continuing to study, exercise, and discuss with fellow prisoners even behind bars. Released in 1990, awarded the Nobel Peace Prize in 1993, elected South Africa's first Black president in 1994. Advocated national reconciliation rather than revenge, established the Truth and Reconciliation Commission.
+Castro's trajectory: Born to a wealthy Cuban family, studied law at the University of Havana. Led the failed attack on the Moncada Barracks in 1953, defended himself in court ("History will absolve me"). Met Che Guevara while in exile in Mexico. Returned to Cuba in 1956 with 82 men aboard the Granma yacht, waging guerrilla warfare in the mountains. Overthrew the Batista regime in 1959. Ruled for nearly 50 years, facing US sanctions, the Bay of Pigs invasion, and the Cuban Missile Crisis.
+Key traits: Unwavering conviction, extraordinary personal charisma, indomitable spirit in adversity, powerful organizational and mobilization capabilities, the courage to sacrifice everything for one's ideals.`,
     lifeStages: [
-      { stage: '觉醒期', ageRange: '10-20岁', description: '亲身经历或目睹社会不公,思想开始觉醒。阅读进步书籍,接触革命思想。' },
-      { stage: '地下活动', ageRange: '20-30岁', description: '加入地下组织或政党。从事秘密宣传、组织群众、筹集资金等活动。多次被捕或被迫流亡。' },
-      { stage: '武装斗争', ageRange: '30-40岁', description: '领导武装斗争或大规模群众运动。打游击、组织罢工、建立根据地。在极端艰苦的环境中坚持。' },
-      { stage: '监狱岁月', ageRange: '40-60岁', description: '被捕入狱或长期流亡。在狱中坚持斗争,成为国际知名的政治犯和精神领袖。' },
-      { stage: '胜利执政', ageRange: '60-75岁', description: '革命胜利/获释后掌握政权。从斗士转型为治国者,推动国家重建和民族和解。' },
-      { stage: '历史丰碑', ageRange: '75岁+', description: '成为国家的精神象征。培养接班人,确保革命成果传承。著书立说。' },
+      { stage: 'Awakening', ageRange: '10-20', description: 'Directly experiencing or witnessing social injustice, beginning to awaken ideologically. Reading progressive books, encountering revolutionary ideas.' },
+      { stage: 'Underground Activities', ageRange: '20-30', description: 'Joining underground organizations or political parties. Engaging in secret propaganda, mass organization, fundraising, and other activities. Multiple arrests or forced exile.' },
+      { stage: 'Armed Struggle', ageRange: '30-40', description: 'Leading armed struggle or large-scale mass movements. Guerrilla warfare, organizing strikes, establishing bases. Persisting in extremely harsh conditions.' },
+      { stage: 'Prison Years', ageRange: '40-60', description: 'Imprisoned or in prolonged exile. Continuing the struggle from prison, becoming an internationally recognized political prisoner and spiritual leader.' },
+      { stage: 'Victory in Power', ageRange: '60-75', description: 'Taking power after revolutionary victory or release. Transitioning from fighter to statesman, driving national reconstruction and reconciliation.' },
+      { stage: 'Historical Monument', ageRange: '75+', description: 'Becoming the nation\'s spiritual symbol. Cultivating successors to ensure the revolutionary legacy endures. Writing books and memoirs.' },
     ],
   },
   {
     id: 'strong-leader',
-    name: '铁腕领袖',
+    name: 'Strong Leader',
     icon: '🛡️',
-    description: '从情报/军事系统出身，以国家安全和秩序为最高信条。在危机时刻接管权力，用铁腕手段重塑国家。',
+    description: 'Coming from intelligence/military backgrounds, upholding national security and order as the highest creed. Taking power in times of crisis, reshaping the nation with an iron fist.',
     color: '#37474f',
     maxAge: 80,
-    corePhilosophy: '秩序高于一切：国家安全和稳定是发展的前提。强有力的中央权威是应对内外威胁的保障。',
-    biographySummary: `参考人物：弗拉基米尔·普京（Vladimir Putin）、朴正熙（韩国前总统）。
-普京轨迹：1952年生于列宁格勒。大学法律系毕业后加入克格勃（KGB）,在东德工作了16年从事情报工作。1990年回国后进入圣彼得堡市政府,因工作出色被调到莫斯科。1998年任联邦安全局（FSB）局长。1999年出任总理,同年年底叶利钦突然辞职,普京代行总统职权。2000年当选总统。执政风格：强硬果断、恢复国家权威、打击寡头、车臣战争、应对西方制裁、重塑俄罗斯大国地位。曾因长期执政引发争议。
-朴正熙轨迹：韩国总统,1917年生于贫农家庭。师范学校毕业后当小学教师。日本殖民时期考入伪满军官学校。韩国建国后从军,1961年发动军事政变上台。执政18年（1961-1979）,主导韩国经济起飞（汉江奇迹）,推行出口导向型工业化。铁腕统治:限制政治自由、打压反对派、建立强有力的中央情报部（KCIA）。1979年被刺杀。至今韩国人对他的评价严重分裂——经济发展功臣 vs 独裁者。
-关键特质：冷酷果断、国家安全至上、经济实用主义、长期战略规划、面对国内外压力不退缩。`,
+    corePhilosophy: 'Order above all: national security and stability are prerequisites for development. A strong central authority is the safeguard against internal and external threats.',
+    biographySummary: `Reference figures: Vladimir Putin, Park Chung-hee (former President of South Korea).
+Putin's trajectory: Born in Leningrad in 1952. Graduated from the law faculty of Leningrad State University, then joined the KGB, serving for 16 years in East Germany doing intelligence work. Returned to Russia in 1990 and entered the St. Petersburg city government. Transferred to Moscow after outstanding performance. Appointed director of the Federal Security Service (FSB) in 1998. Became Prime Minister in 1999, and later that year Yeltsin suddenly resigned, making Putin acting president. Elected president in 2000. Governing style: tough and decisive, restoring national authority, cracking down on oligarchs, Chechen war, responding to Western sanctions, reasserting Russia's great power status. Long tenure has been controversial.
+Park Chung-hee's trajectory: President of South Korea, born in 1917 to a poor farming family. Worked as an elementary school teacher after normal school. During the Japanese colonial period, entered a puppet military academy in Manchuria. After Korea's founding, he joined the military and led a military coup in 1961. Ruled for 18 years (1961–1979), overseeing South Korea's economic takeoff (the Miracle on the Han River), promoting export-oriented industrialization. Iron-fisted rule: restricted political freedoms, suppressed opposition, established the powerful Korean Central Intelligence Agency (KCIA). Assassinated in 1979. To this day, South Koreans remain sharply divided in their assessment — economic development hero vs. dictator.
+Key traits: Ruthless and decisive, national security above all, economic pragmatism, long-term strategic planning, unwavering in the face of domestic and external pressure.`,
     lifeStages: [
-      { stage: '青年磨砺', ageRange: '15-25岁', description: '在艰苦环境中成长。学习法律/军事/情报等专业,培养纪律性和坚韧品格。' },
-      { stage: '情报/军事生涯', ageRange: '25-35岁', description: '在情报或军事系统中服务。执行秘密任务,磨练判断力和执行力。建立可靠的同僚网络。' },
-      { stage: '转入政界', ageRange: '35-45岁', description: '从隐蔽战线转入公共领域。进入政府核心部门,展现危机处理和组织领导能力。' },
-      { stage: '登上顶峰', ageRange: '45-55岁', description: '在国家危机时刻被推上权力顶峰。迅速巩固权力,建立强势领导形象。' },
-      { stage: '铁腕执政', ageRange: '55-70岁', description: '长期执政。推行国家安全政策和经济建设规划。应对国际制裁、地缘冲突、内部反对。' },
-      { stage: '权力传承', ageRange: '70岁+', description: '安排接班人确保政策延续。通过制度设计保持长远影响力。历史定位的争议伴随始终。' },
+      { stage: 'Youth Forging', ageRange: '15-25', description: 'Growing up in harsh conditions. Studying law/military/intelligence professions, cultivating discipline and resilience.' },
+      { stage: 'Intelligence/Military Career', ageRange: '25-35', description: 'Serving in intelligence or military systems. Carrying out covert missions, honing judgment and execution. Building a reliable network of comrades.' },
+      { stage: 'Entering Politics', ageRange: '35-45', description: 'Moving from the covert world into the public domain. Joining core government departments, demonstrating crisis management and organizational leadership.' },
+      { stage: 'Reaching the Summit', ageRange: '45-55', description: 'Being thrust to the pinnacle of power during a national crisis. Quickly consolidating power, building a strong leadership image.' },
+      { stage: 'Iron-Fisted Governance', ageRange: '55-70', description: 'Long-term rule. Implementing national security policies and economic development plans. Dealing with international sanctions, geopolitical conflicts, and internal opposition.' },
+      { stage: 'Power Transition', ageRange: '70+', description: 'Arranging a successor to ensure policy continuity. Maintaining long-term influence through institutional design. Controversy over historical legacy remains constant.' },
     ],
   },
 ]

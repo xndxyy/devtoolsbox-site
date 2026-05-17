@@ -31,19 +31,19 @@ export default function GenderRaceSelection({
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-8"
       >
-        <h1 className="text-2xl font-bold mb-2">定制角色</h1>
+        <h1 className="text-2xl font-bold mb-2">Customize your character</h1>
         <p className="text-[#8888aa]">
           <WorldIcon world={selectedWorld} imgClassName="inline-block w-5 h-5 rounded object-cover mr-1" /> {selectedWorld?.name}
         </p>
       </motion.div>
 
-      {/* 性别选择 */}
+      {/* Gender selection */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-8"
       >
-        <h2 className="text-lg font-semibold mb-3">选择性别</h2>
+        <h2 className="text-lg font-semibold mb-3">Select gender</h2>
         <div className="grid grid-cols-3 gap-3">
           {genderOptions.map((opt) => (
             <motion.div
@@ -67,14 +67,14 @@ export default function GenderRaceSelection({
         </div>
       </motion.div>
 
-      {/* 种族选择 */}
+      {/* Race selection */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.15 }}
         className="mb-8"
       >
-        <h2 className="text-lg font-semibold mb-3">选择种族 / 出身</h2>
+        <h2 className="text-lg font-semibold mb-3">Select race / background</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {races.map((opt) => (
             <motion.div
@@ -98,14 +98,14 @@ export default function GenderRaceSelection({
         </div>
       </motion.div>
 
-      {/* 自定义信息 */}
+      {/* Custom info */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
         className="mb-8"
       >
-        <h2 className="text-lg font-semibold mb-2">自定义信息（可选）</h2>
+        <h2 className="text-lg font-semibold mb-2">Custom info (optional)</h2>
         <textarea
           className="w-full h-20 rounded-xl p-3 text-sm resize-none"
           style={{
@@ -114,13 +114,13 @@ export default function GenderRaceSelection({
             color: 'var(--text-body)',
             outline: 'none',
           }}
-          placeholder="你想让 AI 知道什么？(如：姓甚名谁、想要的人设等)"
+          placeholder="What should the AI know? (e.g., your character's name, desired persona, etc.)"
           value={customInfo}
           onChange={(e) => setCustomInfo(e.target.value)}
         />
       </motion.div>
 
-      {/* 操作按钮 */}
+      {/* Action buttons */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -128,7 +128,7 @@ export default function GenderRaceSelection({
         className="flex gap-3"
       >
         <button className="btn-ghost flex-1" onClick={onBack}>
-          ← 返回
+          ← Back
         </button>
         <button
           className="btn-primary flex-1"
@@ -136,7 +136,7 @@ export default function GenderRaceSelection({
           disabled={!gender || !race}
           style={{ opacity: !gender || !race ? 0.5 : 1 }}
         >
-          开始游戏 →
+          Start game →
         </button>
       </motion.div>
     </div>

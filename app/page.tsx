@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const sections = [
   {
-    href: "/tools/base64",
+    href: "/tools",
     eyebrow: "DevTools Box",
     title: "Developer tools that run fully in your browser",
     description:

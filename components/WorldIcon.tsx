@@ -1,4 +1,4 @@
-// 世界图标组件 - 当有图片时使用图片，否则回退到 emoji
+// World icon component - uses image when available, falls back to emoji
 import type { World } from '@/data/worlds'
 
 export function WorldIcon({

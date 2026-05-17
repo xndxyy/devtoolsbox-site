@@ -1,7 +1,7 @@
-// 前端 API 调用封装 - SSE 流式解析
+// Frontend API wrapper - SSE stream parsing
 
 // ============================================================
-// 通用 SSE 流式请求
+// SSE streaming request
 // ============================================================
 
 export async function streamRequest(
@@ -22,13 +22,13 @@ export async function streamRequest(
 
     if (!response.ok) {
       const errText = await response.text()
-      onError(`API 错误 (${response.status}): ${errText}`)
+      onError(`API error (${response.status}): ${errText}`)
       return
     }
 
     const reader = response.body?.getReader()
     if (!reader) {
-      onError('无法读取响应流')
+      onError('Unable to read response stream')
       return
     }
 
@@ -72,12 +72,12 @@ export async function streamRequest(
     onDone(fullText)
   } catch (err: any) {
     if (err.name === 'AbortError') return
-    onError(err.message || '网络请求失败')
+    onError(err.message || 'Network request failed')
   }
 }
 
 // ============================================================
-// 游戏 API 调用
+// Game API calls
 // ============================================================
 
 export interface GameEventData {
@@ -103,7 +103,7 @@ export async function createSession(worldLine: string): Promise<{ token: string;
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ worldLine }),
   })
-  if (!response.ok) throw new Error('创建 session 失败')
+  if (!response.ok)    throw new Error('Failed to create session')
   return response.json()
 }
 

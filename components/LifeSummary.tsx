@@ -36,7 +36,7 @@ export default function LifeSummary({
 
   const displayRef = useRef('')
 
-  // 生成人生总结
+  // Generate life summary
   useEffect(() => {
     if (review) {
       setHighlights(review.highlights)
@@ -50,7 +50,7 @@ export default function LifeSummary({
     const attrMap: Record<string, number> = {}
     attributes.forEach((a) => { attrMap[a.key] = a.value })
 
-    const lifeEvents = yearEvents.map((e) => `[${e.age}岁] ${e.text}`)
+    const lifeEvents = yearEvents.map((e) => `[Age ${e.age}] ${e.text}`)
     const lifeSummary = yearEvents.map((e) => e.text).join('\n')
 
     const finalAge = lifespan || currentAge
@@ -59,7 +59,7 @@ export default function LifeSummary({
       {
         worldLine: selectedWorld?.id || 'modern',
         lifespan: finalAge,
-        ending: ending || '普通结局',
+        ending: ending || 'Ordinary ending',
         scores: { drama: 0, achievement: 0, impact: 0 },
         lifeSummary,
         yearEvents: lifeEvents,
@@ -74,7 +74,7 @@ export default function LifeSummary({
       },
       (fullText) => {
         setIsGenerating(false)
-        // 尝试解析 JSON
+        // Try to parse JSON
         try {
           const cleaned = fullText
             .replace(/```json/g, '')
@@ -85,7 +85,7 @@ export default function LifeSummary({
             highlights: parsed.highlights || [],
             scores: parsed.scores || { drama: 0, achievement: 0, impact: 0 },
             rating: parsed.rating || 'B',
-            tagline: parsed.tagline || '平凡的一生',
+            tagline: parsed.tagline || 'An ordinary life',
           }
           setReview(newReview)
           setHighlights(newReview.highlights)
@@ -93,22 +93,22 @@ export default function LifeSummary({
           setRating(newReview.rating)
           setTagline(newReview.tagline)
 
-          // 自动保存
+          // Auto-save
           saveToLocalStorage()
 
-          // 动画触发
+          // Animation trigger
           setTimeout(() => setScoreAnim(true), 300)
         } catch {
-          // 如果解析失败，直接用全文
+          // If parsing fails, use full text as summary
           setSummaryText(fullText)
           setTimeout(() => setScoreAnim(true), 300)
         }
       },
       (err) => {
-        console.error('总结生成失败:', err)
+        console.error('Summary generation failed:', err)
         setIsGenerating(false)
         setRating('B')
-        setTagline('平凡的一生')
+        setTagline('An ordinary life')
         setTimeout(() => setScoreAnim(true), 300)
       }
     )
@@ -142,28 +142,28 @@ export default function LifeSummary({
 
   const getScoreLabel = (label: string) => {
     switch (label) {
-      case 'drama': return '戏剧性'
-      case 'achievement': return '成就'
-      case 'impact': return '影响力'
+      case 'drama': return 'Drama'
+      case 'achievement': return 'Achievement'
+      case 'impact': return 'Impact'
       default: return label
     }
   }
 
   return (
     <div className="min-h-screen px-4 py-8 max-w-2xl mx-auto">
-      {/* 标题 */}
+      {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-8"
       >
-        <h1 className="text-3xl font-bold mb-2">人生总结</h1>
+        <h1 className="text-3xl font-bold mb-2">Life Summary</h1>
         <p className="text-[#8888aa]">
           <WorldIcon world={selectedWorld} imgClassName="inline-block w-5 h-5 rounded object-cover mr-1" /> {selectedWorld?.name}
         </p>
       </motion.div>
 
-      {/* 评分等级 */}
+      {/* Rating tier */}
       {rating && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -193,7 +193,7 @@ export default function LifeSummary({
         </motion.div>
       )}
 
-      {/* 角色信息 */}
+      {/* Character info */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ export default function LifeSummary({
           <div>
             <span className="font-semibold">{gender} · {race}</span>
             <div className="text-xs text-[#666688] mt-0.5">
-              享年 {lifespan || currentAge} 岁 · 结局：{ending || '未知'}
+              Lived {lifespan || currentAge} yrs · Ending: {ending || 'Unknown'}
             </div>
           </div>
           <WorldIcon world={selectedWorld} imgClassName="inline-block w-8 h-8 rounded-lg object-cover" />
@@ -234,7 +234,7 @@ export default function LifeSummary({
         )}
       </motion.div>
 
-      {/* 评分条 */}
+      {/* Rating bars */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -271,7 +271,7 @@ export default function LifeSummary({
         })}
       </motion.div>
 
-      {/* 高光时刻 */}
+      {/* Highlights */}
       {highlights.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -279,7 +279,7 @@ export default function LifeSummary({
           transition={{ delay: 1.8 }}
           className="mb-6"
         >
-          <h2 className="text-lg font-semibold mb-3">✨ 人生高光时刻</h2>
+          <h2 className="text-lg font-semibold mb-3">✨ Life Highlights</h2>
           <div className="space-y-2">
             {highlights.map((h, i) => (
               <motion.div
@@ -297,7 +297,7 @@ export default function LifeSummary({
         </motion.div>
       )}
 
-      {/* 背景故事回顾 */}
+      {/* Life retrospective */}
       {background && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -305,7 +305,7 @@ export default function LifeSummary({
           transition={{ delay: 2.5 }}
           className="mb-6"
         >
-          <h2 className="text-lg font-semibold mb-3">📜 完整人生回顾</h2>
+          <h2 className="text-lg font-semibold mb-3">📜 Full Life Review</h2>
           <div
             className="card text-sm leading-relaxed"
             style={{
@@ -324,12 +324,12 @@ export default function LifeSummary({
                     color: '#a78bfa',
                   }}
                 >
-                  {event.age}岁
+                  {event.age} yrs
                 </span>{' '}
                 {event.text}
                 {event.chosenIndex !== undefined && event.choices && (
                   <span className="text-xs text-green-400 ml-1">
-                    (选择了「{event.choices[event.chosenIndex]?.text}」)
+                    (chose「{event.choices[event.chosenIndex]?.text}」)
                   </span>
                 )}
               </p>
@@ -338,7 +338,7 @@ export default function LifeSummary({
         </motion.div>
       )}
 
-      {/* AI 生成中的占位 */}
+      {/* AI generation placeholder */}
       {isGenerating && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -350,7 +350,7 @@ export default function LifeSummary({
             <span className="w-3 h-3 rounded-full bg-[#a78bfa] animate-pulse" style={{ animationDelay: '0.2s' }} />
             <span className="w-3 h-3 rounded-full bg-[#a78bfa] animate-pulse" style={{ animationDelay: '0.4s' }} />
           </div>
-          <p className="text-sm text-[#8888aa]">正在为你的人生撰写总结...</p>
+          <p className="text-sm text-[#8888aa]">Writing your life summary...</p>
           {summaryText && (
             <div className="mt-4 text-sm text-left card">
               {summaryText}
@@ -359,7 +359,7 @@ export default function LifeSummary({
         </motion.div>
       )}
 
-      {/* 重新开始按钮 */}
+      {/* Restart button */}
       {!isGenerating && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -371,7 +371,7 @@ export default function LifeSummary({
             className="btn-primary text-lg px-10 py-4"
             onClick={onRestart}
           >
-            🔄 开启新人生
+            🔄 Start a new life
           </button>
         </motion.div>
       )}

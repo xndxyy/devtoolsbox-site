@@ -25,7 +25,7 @@ export default function GamePage() {
   const [gamePhase, setGamePhase] = useState<GamePhase>('idle')
   const [hasSave, setHasSave] = useState(false)
 
-  // 初始化 - 尝试读取存档
+  // Initialize - attempt to load save
   useEffect(() => {
     if (loadFromLocalStorage()) {
       setGamePhase(useGameStore.getState().phase)
@@ -37,7 +37,7 @@ export default function GamePage() {
     }
   }, [])
 
-  // 同步 store phase 到本地状态
+  // Sync store phase to local state
   useEffect(() => {
     setGamePhase(phase)
   }, [phase])
@@ -47,7 +47,7 @@ export default function GamePage() {
     setGamePhase(nextPhase)
   }
 
-  // 阶段过渡
+  // Phase transitions
   const handleAttrNext = () => handlePhaseTransition('talents')
   const handleTalentNext = () => handlePhaseTransition('playing')
   const handleTalentBack = () => handlePhaseTransition('attributes')
@@ -56,17 +56,17 @@ export default function GamePage() {
     handlePhaseTransition('playing')
   }
 
-  // 世界选择后，跳过性别种族直接进入属性分配
+  // After world selection, skip gender/race and go directly to attribute allocation
   const originalSelectWorld = useGameStore.getState().selectWorld
   const handleWorldSelected = () => {
-    // selectWorld 已经处理了 phase 变化
+    // selectWorld already handles phase change
     const s = useGameStore.getState()
     if (s.selectedWorld) {
       handlePhaseTransition('attributes')
     }
   }
 
-  // 检查是否所有选择完成
+  // Check if all selections are complete
   const allAttributesAssigned = () => {
     const remaining = GAME_CONFIG.totalAttributePoints - attributes.reduce((s, a) => s + a.value, 0)
     return remaining <= GAME_CONFIG.totalAttributePoints
@@ -105,7 +105,7 @@ export default function GamePage() {
       </div>
 
       <AnimatePresence mode="wait">
-        {/* 世界选择 */}
+        {/* World Selection */}
         {gamePhase === 'idle' && (
           <motion.div
             key="world-selection"
@@ -117,7 +117,7 @@ export default function GamePage() {
           </motion.div>
         )}
 
-        {/* 属性分配 */}
+        {/* Attribute Allocation */}
         {gamePhase === 'attributes' && (
           <motion.div
             key="attr-allocation"
@@ -130,7 +130,7 @@ export default function GamePage() {
           </motion.div>
         )}
 
-        {/* 天赋选择 */}
+        {/* Talent Selection */}
         {gamePhase === 'talents' && (
           <motion.div
             key="talent-selection"
@@ -143,7 +143,7 @@ export default function GamePage() {
           </motion.div>
         )}
 
-        {/* 游戏进行中 */}
+        {/* Game Playing */}
         {gamePhase === 'playing' && (
           <motion.div
             key="game-play"
@@ -155,7 +155,7 @@ export default function GamePage() {
           </motion.div>
         )}
 
-        {/* 人生总结 */}
+        {/* Life Summary */}
         {gamePhase === 'review' && (
           <motion.div
             key="life-summary"

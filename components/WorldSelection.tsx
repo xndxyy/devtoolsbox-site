@@ -129,7 +129,7 @@ export default function WorldSelection() {
 
   return (
     <div className="min-h-screen px-3 sm:px-4 py-6 sm:py-8 max-w-5xl mx-auto">
-      {/* 标题 */}
+      {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ export default function WorldSelection() {
         <p className="text-xs sm:text-sm text-[#8888aa]">Every world opens a completely new journey.</p>
       </motion.div>
 
-      {/* 第一组：World experiences */}
+      {/* Group 1: World experiences */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -169,7 +169,7 @@ export default function WorldSelection() {
         </motion.div>
       </motion.div>
 
-      {/* 第二组：Life experiences */}
+      {/* Group 2: Life experiences */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -196,7 +196,7 @@ export default function WorldSelection() {
         </motion.div>
       </motion.div>
 
-      {/* 第三组：Career experiences */}
+      {/* Group 3: Career experiences */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -268,7 +268,7 @@ export default function WorldSelection() {
         </motion.div>
       </motion.div>
 
-      {/* 第四组：爽文体验 */}
+      {/* Group 4: Power fantasy */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -485,7 +485,7 @@ export default function WorldSelection() {
         </motion.div>
       </motion.div>
 
-      {/* Custom world输入弹窗 */}
+      {/* Custom world input dialog */}
       <AnimatePresence>
         {showCustomInput && (
           <motion.div
@@ -502,7 +502,7 @@ export default function WorldSelection() {
               className="card max-w-lg w-full p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2 className="text-xl font-bold mb-4">🌍 描述你的世界</h2>
+              <h2 className="text-xl font-bold mb-4">🌍 Describe your world</h2>
               <textarea
                 className="w-full h-32 rounded-xl p-3 text-sm resize-none mb-4"
                 style={{
@@ -511,7 +511,7 @@ export default function WorldSelection() {
                   color: 'var(--text-body)',
                   outline: 'none',
                 }}
-                placeholder="描述你想象中的世界...&#10;例如：一个以音乐为魔法的奇幻世界，每个人都能通过演奏乐器释放力量..."
+                placeholder="Describe the world you imagine...\nFor example: a fantasy world where music is magic, and everyone can unleash power by playing an instrument..."
                 value={customWorldDescription}
                 onChange={(e) => setCustomWorldDescription(e.target.value)}
               />
@@ -520,14 +520,14 @@ export default function WorldSelection() {
                   className="btn-ghost btn-sm"
                   onClick={() => setShowCustomInput(false)}
                 >
-                  取消
+                  Cancel
                 </button>
                 <button
                   className="btn-primary btn-sm"
                   onClick={handleCustomConfirm}
                   disabled={!customWorldDescription.trim()}
                 >
-                  开始游戏
+                  Start journey
                 </button>
               </div>
             </motion.div>

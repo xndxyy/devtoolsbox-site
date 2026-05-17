@@ -1,5 +1,5 @@
-// 游戏状态管理 - Zustand store
-// 反编译自 re.maa-ai.com 的 AI 人生重开手帐
+// Game state management - Zustand store
+// Decompiled from re.maa-ai.com's AI Life Replay
 
 import { create } from 'zustand'
 import { World, worlds } from '@/data/worlds'
@@ -11,7 +11,7 @@ import { Talent } from '@/data/talents'
 import { GamePhase, GAME_CONFIG, genderOptions, raceOptions, customWorldRaceOptions } from '@/data/config'
 
 // ============================================================
-// 类型定义
+// Type definitions
 // ============================================================
 
 export interface AttributeState {
@@ -76,19 +76,19 @@ export interface GameSave {
 }
 
 // ============================================================
-// Store 接口
+// Store interface
 // ============================================================
 
 interface GameStore {
-  // 游戏阶段
+  // Game phase
   phase: GamePhase
   setPhase: (phase: GamePhase) => void
 
-  // 游戏模式
+  // Game mode
   gameMode: 'immersive' | 'quick'
   setGameMode: (mode: 'immersive' | 'quick') => void
 
-  // 世界选择
+  // World selection
   selectedWorld: World | null
   selectWorld: (worldId: string) => void
   selectedProfession: Profession | null
@@ -102,7 +102,7 @@ interface GameStore {
   customWorldDescription: string
   setCustomWorldDescription: (desc: string) => void
 
-  // 角色信息
+  // Character info
   gender: string
   race: string
   customInfo: string
@@ -110,20 +110,20 @@ interface GameStore {
   setRace: (race: string) => void
   setCustomInfo: (info: string) => void
 
-  // 属性
+  // Attributes
   attributes: AttributeState[]
   setAttributes: (attrs: AttributeState[]) => void
   updateAttribute: (key: string, delta: number) => void
   remainingPoints: number
 
-  // 天赋
+  // Talents
   drawnTalents: Talent[]
   selectedTalents: Talent[]
   drawTalents: () => void
   toggleTalent: (talent: Talent) => void
   redrawTalents: () => void
 
-  // 游戏状态
+  // Game state
   currentAge: number
   maxAge: number
   background: string
@@ -146,15 +146,15 @@ interface GameStore {
   setLifespan: (age: number) => void
   setEnding: (ending: string) => void
 
-  // 后天属性
+  // Acquired attributes
   acquiredAttributes: Record<string, number>
   setAcquiredAttribute: (key: string, value: number) => void
 
-  // 评价
+  // Review
   review: GameReview | null
   setReview: (review: GameReview) => void
 
-  // 存档
+  // Save data
   saveToLocalStorage: () => void
   loadFromLocalStorage: () => boolean
   resetGame: () => void
@@ -165,7 +165,7 @@ interface GameStore {
 }
 
 // ============================================================
-// 初始状态
+// Initial state
 // ============================================================
 
 const initialState = {
@@ -199,7 +199,7 @@ const initialState = {
 }
 
 // ============================================================
-// Utility: 根据属性值计算当前 tier label
+// Utility: get current tier label from attribute value
 // ============================================================
 
 function getTierLabel(tiers: { min: number; label: string }[], value: number): string {
@@ -211,7 +211,7 @@ function getTierLabel(tiers: { min: number; label: string }[], value: number): s
 }
 
 // ============================================================
-// 创建 Store
+// Create Store
 // ============================================================
 
 export const useGameStore = create<GameStore>((set, get) => ({
@@ -222,8 +222,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
     return GAME_CONFIG.totalAttributePoints - sum
   },
 
-  // 该 getter 在 zustand 中不会自动工作，我们覆盖
-  // 通过重新定义，注意 zustand 不支持 getter，将在组件中计算
+  // This getter won't auto-work in zustand, we override it
+  // Note: zustand doesn't support getters, will be computed in components
 
   setPhase: (phase) => set({ phase }),
 
@@ -233,13 +233,13 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const world = worlds.find((w) => w.id === worldId)
     if (!world) return
 
-    // 重置角色属性
+    // Reset character attributes
     const attrs = world.attributes.map((a) => ({
       key: a.key,
       value: 0,
     }))
 
-    // 重置后天属性
+    // Reset acquired attributes
     const acquiredAttrs: Record<string, number> = {}
     world.acquiredAttributes.forEach((a) => {
       acquiredAttrs[a.key] = a.initialValue
@@ -274,7 +274,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const profession = professions.find((p) => p.id === professionId)
     if (!profession) return
 
-    // 使用现代都市作为基底世界
+    // Use Modern City as base world
     const world = worlds.find((w) => w.id === 'modern')
     if (!world) return
 
@@ -316,7 +316,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const template = powerFantasyTemplates.find((t) => t.id === templateId)
     if (!template) return
 
-    // 使用现代都市作为基底世界
+    // Use Modern City as base world
     const world = worlds.find((w) => w.id === 'modern')
     if (!world) return
 
@@ -445,7 +445,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   setGender: (gender) => {
     set({ gender })
-    // 同时设置对应世界的默认种族
+    // Also set default race for the selected world
     const world = get().selectedWorld
     if (world) {
       const races = raceOptions[world.id] || customWorldRaceOptions
@@ -469,13 +469,13 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const newVal = current + delta
     const sum = attrs.reduce((s, a) => s + a.value, 0)
 
-    // 约束检查
+    // Constraint check
     if (delta > 0) {
-      // 增加
+      // Increase
       if (sum >= GAME_CONFIG.totalAttributePoints) return
       if (newVal > GAME_CONFIG.maxBaseAttribute) return
     } else {
-      // 减少
+      // Decrease
       if (newVal < 0) return
     }
 
@@ -486,7 +486,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   drawTalents: () => {
     const { talents: allTalents } = require('@/data/talents')
-    // 随机抽取 3 个天赋
+    // Randomly draw 3 talents
     const shuffled = [...allTalents].sort(() => Math.random() - 0.5)
     const drawn = shuffled.slice(0, 3)
     set({ drawnTalents: drawn, selectedTalents: [] })
@@ -497,12 +497,12 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const isSelected = selected.some((t) => t.id === talent.id)
 
     if (isSelected) {
-      // 取消选择
+      // Deselect
       set({ selectedTalents: selected.filter((t) => t.id !== talent.id) })
     } else {
-      // 选择（上限 3 个）
+      // Select (max 3)
       if (selected.length >= GAME_CONFIG.talentSelectCount) return
-      // 互斥检查
+      // Mutex check
       if (talent.mutexGroup) {
         const hasConflict = selected.some(
           (t) => t.mutexGroup && t.mutexGroup === talent.mutexGroup
@@ -537,11 +537,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
     updated[eventIndex] = { ...event, chosenIndex: choiceIndex }
     set({ yearEvents: updated })
 
-    // 更新后天属性
+    // Update acquired attributes
     const choice = event.choices[choiceIndex]
     if (choice.effect) {
-      // effect 描述里可能包含属性变化信息，由 AI 处理
-      // 实际属性变化由后端生成时已内嵌
+      // Effect description may contain attribute change info, handled by AI
+      // Actual attribute changes are embedded when backend generates
     }
   },
 
@@ -673,7 +673,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
   },
 }))
 
-// 计算剩余属性点的 hook
+// Hook for calculating remaining attribute points
 export function useRemainingPoints() {
   const attrs = useGameStore((s) => s.attributes)
   const sum = attrs.reduce((acc, a) => acc + a.value, 0)

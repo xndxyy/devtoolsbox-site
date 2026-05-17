@@ -1,182 +1,182 @@
-// 爽文体验模式 - 爽文模板数据定义
-// 每个模板代表一种经典的爽文流派，包含金手指、核心套路和AI风格指令
+// Power Fantasy Experience Mode - Power Fantasy Template Data Definitions
+// Each template represents a classic power fantasy genre, including golden fingers, core tropes, and AI style instructions
 
 export interface PowerFantasyTemplate {
   id: string
-  name: string        // 流派名称
+  name: string        // Genre name
   icon: string
   description: string
   color: string
   maxAge: number
-  // 金手指 - 主角的独特能力
+  // Golden finger - the protagonist's unique ability
   goldenFinger: string
-  // 核心爽点套路
+  // Core satisfying tropes
   coreTropes: string[]
-  // 叙事风格指令（注入AI prompt）
+  // Narrative style instructions (injected into AI prompt)
   styleGuide: string
-  // 什么年龄后开启摘要叙述模式（平淡年份跳过细节）
+  // Age at which to start summary narrative mode (skip details for uneventful years)
   summaryStartAge: number
-  // 摘要叙述时一次跳几年
+  // Number of years to skip per summary jump
   summaryYearSpan: number
 }
 
 export const powerFantasyTemplates: PowerFantasyTemplate[] = [
   {
     id: 'reborn-revenge',
-    name: '重生复仇',
+    name: 'Reborn Revenge',
     icon: '🔄',
-    description: '前世被人算计含恨而死，一觉醒来回到了少年时代。手握未来二十年的记忆，这一次，绝不重蹈覆辙。',
+    description: 'Schemed against and died with resentment in a past life, only to wake up back in your teenage years. With twenty years of future memories in hand, this time you will not repeat the same mistakes.',
     color: '#ff6f00',
     maxAge: 80,
-    goldenFinger: '重生记忆：完整保留前世的记忆和经验，知道未来二十年所有重大事件、股市走势、房价变化、科技趋势。认识所有表面友善实则包藏祸心的人和真正的贵人。',
+    goldenFinger: 'Rebirth Memory: Full retention of past life memories and experiences, knowledge of all major events over the next twenty years — stock market trends, property prices, technological shifts. Recognition of everyone who is outwardly friendly but secretly malicious, and the true benefactors.',
     coreTropes: [
-      '前世被最信任的人背叛 → 重生后提前防范',
-      '抄未来的成功作品/创业 → 提前成为行业大佬',
-      '在重要节点做出与前世相反的选择 → 人生彻底逆转',
-      '让前世害自己的人一个个付出代价 → 完美打脸',
-      '前世错过的人（初恋/贵人）→ 今生好好珍惜',
+      'Betrayed by the most trusted person in the past life → Take precautions early in this life',
+      'Copy successful works/startups from the future → Become an industry giant ahead of time',
+      'Make opposite choices at critical junctures compared to the past life → Life completely reversed',
+      'Make everyone who harmed you in the past life pay one by one → Perfect face-slapping',
+      'Missed opportunities from the past life (first love/benefactors) → Cherish them this time',
     ],
-    styleGuide: `爽文风格：重生复仇流。核心逻辑是"重生者信息差"——主角拥有未来记忆，在关键决策点上总能做出最优选择。
-写作要点：
-- 前期（少年期）：低调发育，默默积累。利用记忆在学业/股市/创业中小试牛刀。
-- 中期（20-30岁）：快速崛起。事业起飞，复仇线逐步展开，前世的仇人一个个浮出水面被打脸。
-- 高潮期（30-40岁）：巅峰对决。与前世最大的敌人正面交锋，全面碾压。
-- 后期（40岁+）：功成名就。事业帝国建立，家庭美满，前世的遗憾全部弥补。
-- 关键驱动：每次遇到前世有过交集的人，都要体现主角的"早已看穿一切"的气质。
-- 叙事语气：痛快、解气、带点"早已看穿一切"的从容。用第二人称"你"。`,
+    styleGuide: `Power fantasy style: Reborn Revenge. Core logic is "the information advantage of the reborn" — the protagonist possesses future memories and always makes the optimal choice at key decision points.
+Writing Points:
+- Early (teenage years): Low-key development, quiet accumulation. Use memories to test the waters in academics/stock market/starting small businesses.
+- Mid (ages 20-30): Rapid rise. Career takes off, revenge plot gradually unfolds, past life enemies emerge one by one and get slapped.
+- Climax (ages 30-40): Peak confrontation. Face-to-face showdown with the greatest enemy from the past life, total domination.
+- Late (ages 40+): Achievement and fame. Business empire established, family happiness, all past life regrets resolved.
+- Key driver: Every time the protagonist encounters someone from their past life, they must display an "already seen through everything" demeanor.
+- Narrative tone: Satisfying, cathartic, with a composed "already figured it all out" attitude. Use second person "you".`,
     summaryStartAge: 35,
     summaryYearSpan: 4,
   },
   {
     id: 'urban-cultivator',
-    name: '都市修仙',
+    name: 'Urban Cultivator',
     icon: '🐉',
-    description: '都市中隐藏的修仙者。表面是普通学生/上班族，实则拥有上古传承的逆天功法，在世俗与修真之间游走。',
+    description: 'A hidden cultivator in the city. On the surface an ordinary student or office worker, but in reality possessing ancient inherited techniques that defy heaven, navigating between the mortal and cultivation worlds.',
     color: '#7c4dff',
     maxAge: 120,
-    goldenFinger: '上古传承：意外获得远古大能的完整传承（功法+炼丹+阵法+炼器），修炼速度是普通修士的百倍。还有一枚储物戒指，内含灵药、法宝和修炼资源。',
+    goldenFinger: 'Ancient Inheritance: Accidentally obtained the complete inheritance of an ancient great cultivator (techniques + alchemy + formations + artifact crafting). Cultivation speed is a hundred times that of ordinary cultivators. Also possesses a storage ring containing spiritual herbs, artifacts, and cultivation resources.',
     coreTropes: [
-      '偶得奇遇获得传承 → 一飞冲天',
-      '扮猪吃老虎 → 看似普通实际是绝世高手',
-      '校园/职场中低调 → 遇到危险时展现超凡实力',
-      '美女环绕 → 各路女神被主角的气质吸引',
-      '武道世家/隐世宗门看不起主角 → 被打脸',
+      'Stumble upon a fortuitous encounter and obtain inheritance → Soar to greatness',
+      'Playing pig to eat the tiger → Seemingly ordinary but actually a peerless master',
+      'Low-key on campus or in the workplace → Reveal transcendent strength when danger strikes',
+      'Surrounded by beauties → Various goddesses drawn to the protagonist\'s aura',
+      'Martial arts families or hidden sects look down on the protagonist → Get face-slapped',
     ],
-    styleGuide: `爽文风格：都市修仙流。将修仙元素融入现代都市生活。
-写作要点：
-- 前期（少年期）：意外获得传承，悄悄修炼。在校园中用一点小法术解决问题，初露锋芒。
-- 中期（20-30岁）：修炼小成。一边在都市生活（工作/创业/上学），一边修炼。遇到武道世家、隐世宗门的冲突，用实力碾压。
-- 后期（30岁+）：修为大成。创立自己的势力，都市和修真界通吃，成为传说。
-- 核心驱动：每个冲突场景都要有"境界碾压"——对手越强，主角展现的实力越惊人。
-- 叙事语气：带有神秘感和从容自信。修炼突破的情节要写得有气势。用第二人称"你"。
-- 年龄超过40岁后，非核心情节可以多年度概括叙述，但修炼突破、大战、重要社交场合必须详细描述。`,
+    styleGuide: `Power fantasy style: Urban Cultivator. Integrates cultivation elements into modern city life.
+Writing Points:
+- Early (teenage years): Accidentally obtain the inheritance, cultivate quietly. Use minor spells to solve problems on campus, first display of brilliance.
+- Mid (ages 20-30): Small achievements in cultivation. Live a city life (work/startup/school) while cultivating. Encounter conflicts with martial arts families and hidden sects, overpower them with strength.
+- Late (ages 30+): Great accomplishments. Establish your own faction, dominate both the mortal and cultivation worlds, become a legend.
+- Core driver: Every conflict scene must feature "realm crushing" — the stronger the opponent, the more astonishing the protagonist\'s displayed power.
+- Narrative tone: Mysterious and calmly confident. Breakthrough scenes must be written with grandeur. Use second person "you".
+- After age 40, non-core plot points can be summarized across multiple years, but cultivation breakthroughs, major battles, and important social occasions must be described in detail.`,
     summaryStartAge: 40,
     summaryYearSpan: 5,
   },
   {
     id: 'system-lottery',
-    name: '系统流',
+    name: 'System Lottery',
     icon: '🎰',
-    description: '叮！最强签到系统已绑定。完成日常任务获得奖励，签到抽奖神装神器。别人苦修十年，你只需要签到一天。',
+    description: 'Ding! The Ultimate Check-in System has been bound. Complete daily tasks to earn rewards, check in and draw for god-tier equipment. Others train for ten years — you just need one day of check-ins.',
     color: '#00c853',
     maxAge: 80,
-    goldenFinger: '全能系统：包含签到系统（每日签到获得奖励）、任务系统（完成任务获得经验/技能/道具）、抽奖系统（积分抽奖获得稀有物品）、商城系统（用积分兑换各种能力）。系统会主动发布任务引导主角变强。',
+    goldenFinger: 'Omnipotent System: Includes a check-in system (daily rewards for checking in), a quest system (complete tasks for experience/skills/items), a lottery system (spend points for rare items), and a shop system (exchange points for various abilities). The system proactively publishes missions to guide the protagonist toward greater strength.',
     coreTropes: [
-      '开局签到获得神级新手礼包 → 直接起飞',
-      '别人需要苦练的技能 → 你一键学会',
-      '系统任务看似简单 → 奖励丰厚得离谱',
-      '遇到危险时刚好抽到保命道具 → 精准打脸',
-      '每次升级都触发新功能/新板块 → 越来越强',
+      'Check-in at the start to receive a god-level newbie gift pack → Take off immediately',
+      'Skills others need to practice tirelessly → You master with one click',
+      'System quests seem simple → Rewards are ridiculously generous',
+      'Encounter danger and happen to draw a life-saving item → Precision face-slapping',
+      'Every upgrade triggers new features/modules → Getting stronger and stronger',
     ],
-    styleGuide: `爽文风格：系统流/签到流。核心是"系统金手指碾压一切"。
-写作要点：
-- 一切不合逻辑的变强都合理——"系统就是这么设定的"。
-- 每个重大事件都要带出系统存在感："叮！系统提示你……"
-- 抽奖/签到获得好东西的场景要详细描写，让读者感受到"运气爆棚"的爽感。
-- 系统和主角之间的互动（吐槽/套路）是重要看点。
-- 节奏要快：获得能力后立刻就有施展机会（装逼打脸）。
-- 叙事语气：幽默轻松，带点网文特有的"系统文"语气。用第二人称"你"。
-- 40岁后平淡年份可以多年度概括，但"首次获得SSS级奖励""最强敌人对决"等重要节点必须详细。`,
+    styleGuide: `Power fantasy style: System Lottery / Check-in. Core is "system golden finger crushes everything."
+Writing Points:
+- Everything that breaks logic is justified — "this is how the system is designed."
+- Every major event must highlight the system\'s presence: "Ding! The system informs you that..."
+- Lottery/check-in scenes where good items are obtained must be described in detail, letting readers feel the joy of "incredible luck."
+- The interaction between the system and the protagonist (banter/routines) is a major selling point.
+- Fast pacing: immediately after obtaining an ability, there should be an opportunity to use it (show off and face-slap).
+- Narrative tone: Humorous and lighthearted, with the characteristic "system novel" tone. Use second person "you".
+- After age 40, uneventful years can be summarized across multiple years, but major milestones like "first SSS-rank reward" and "showdown with the strongest enemy" must be detailed.`,
     summaryStartAge: 40,
     summaryYearSpan: 3,
   },
   {
     id: 'miracle-doctor',
-    name: '神医下山',
+    name: 'Miracle Doctor Descends the Mountain',
     icon: '💊',
-    description: '深山隐世神医的唯一传人，二十岁奉命下山入世修行。一手银针活死人肉白骨，但师傅说了——低调，尽量低调。',
+    description: 'The sole heir of a reclusive miracle doctor hidden deep in the mountains. At age twenty, you are sent down the mountain to cultivate through worldly experience. A silver needle in your hand can raise the dead and restore flesh to bones — but master said: keep a low profile. As low as possible.',
     color: '#d50000',
     maxAge: 80,
-    goldenFinger: '绝世医术：传承自隐世医门的完整医术体系——针灸通经络、丹药治百病、望气术一眼看穿病症。还有一门古武内功作为自保手段。师傅是隐世神医，有一本《医门秘典》记载了失传的千古奇方。',
+    goldenFinger: 'Peerless Medical Skills: A complete medical system inherited from a hidden medical sect — acupuncture to unblock meridians, pills to cure all ailments, qi observation to diagnose at a glance. Also possesses an ancient martial arts internal technique for self-defense. Master is a reclusive miracle doctor, and you hold the "Medical Sect Secret Canon" recording lost ancient formulas.',
     coreTropes: [
-      '遇到富豪/权贵突发绝症 → 各大医院束手无策 → 主角银针一出手就治好',
-      '被人看不起是乡下土郎中 → 展露医术震惊全场',
-      '治疗过程中与患者家族的美女产生交集 → 红颜知己+1',
-      '遇到同行（西医专家/中医世家）质疑 → 用实力碾压',
-      '行医过程中牵扯出更大的江湖恩怨 → 古武+医术双线推进',
+      'Encounter a wealthy or powerful person struck by a terminal illness → Major hospitals helpless → A single needle from the protagonist cures them',
+      'Looked down upon as a country doctor → Reveal medical skills and shock the entire room',
+      'During treatment, cross paths with beautiful women from the patient\'s family → Soulmate +1',
+      'Questioned by peers (Western medical experts or traditional Chinese medicine families) → Overwhelm them with skill',
+      'Treatment leads to larger underworld conflicts → Dual advancement on martial arts and medicine fronts',
     ],
-    styleGuide: `爽文风格：神医下山流。核心是"医术通天，低调做人但实力不允许"。
-写作要点：
-- 前期（下山初期）：在各种场合无意中展露医术，救了一个又一个关键人物，积累人脉和声望。
-- 中期：建立自己的诊所/医院/药厂，与医药集团/西医权威交锋，用古法医术碾压现代医学解决不了的疑难杂症。
-- 后期：涉足更深的江湖纷争，医门传承背后的秘密逐步揭开，医术和古武双重碾压所有对手。
-- 每个治疗场景都要写出"西医束手无策→主角轻松解决→全场震惊"的经典三段式。
-- 叙事语气：沉稳自信，带点淡然。医术描写要专业感（穴位、药名、脉象），但不要过于晦涩。用第二人称"你"。
-- 45岁后非关键年份可多年度概括，但每个惊艳的治疗案例必须详细。`,
+    styleGuide: `Power fantasy style: Miracle Doctor Descends the Mountain. Core is "medical skills that reach the heavens, wanting a low profile but strength won\'t allow it."
+Writing Points:
+- Early (initial descent): Unintentionally display medical skills in various settings, save one key figure after another, accumulate connections and reputation.
+- Mid: Establish your own clinic/hospital/pharmaceutical factory, clash with medical conglomerates and Western medicine authorities, use ancient medicine to crush incurable diseases modern medicine cannot solve.
+- Late: Get involved in deeper underworld conflicts, gradually uncover secrets behind the medical sect inheritance, crush all opponents with both medicine and ancient martial arts.
+- Every treatment scene must follow the classic three-part formula: "Western medicine helpless → protagonist easily solves it → entire room in shock."
+- Narrative tone: Steady and confident, with a touch of calm detachment. Medical descriptions should feel professional (acupoints, herb names, pulse conditions) but not overly obscure. Use second person "you".
+- After age 45, non-critical years can be summarized across multiple years, but every stunning medical case must be detailed.`,
     summaryStartAge: 45,
     summaryYearSpan: 3,
   },
   {
     id: 'war-god-return',
-    name: '战神归来',
+    name: 'War God Returns',
     icon: '⚡',
-    description: '世界第一兵王、地下世界的"暗夜君王"，厌倦了刀口舔血的生活，回归都市做个普通人。但麻烦总是自己找上门。',
+    description: 'The world\'s number one military king, the "Lord of the Night" of the underworld. Tired of living on the edge, you return to the city to live as an ordinary person. But trouble always finds you.',
     color: '#ff1744',
     maxAge: 70,
-    goldenFinger: '兵王实力：全球顶尖特种兵的实战能力——格斗、枪械、战术、驾驶样样精通。掌握多种暗杀和反侦察技巧。在国外积累了大量人脉：各国政要、商业大亨、地下势力首领都欠他人情。拥有一个隐秘的情报网络。',
+    goldenFinger: 'Military King Combat Power: Elite special forces combat capabilities honed by the world\'s top soldier — proficient in hand-to-hand combat, firearms, tactics, and driving. Mastery of various assassination and counter-surveillance techniques. Vast connections accumulated overseas: politicians, business tycoons, and underworld leaders all owe you favors. Possession of a covert intelligence network.',
     coreTropes: [
-      '刚回国就被各种小人物挑衅 → 一个眼神/一招制服',
-      '前战友/部下遇到困难求救 → 召集旧部摆平一切',
-      '被丈母娘/亲戚看不起是"当兵的" → 展露真实身份震惊所有人',
-      '某大势力不开眼招惹主角的亲人/爱人 → 撕下伪装，一人碾压一个组织',
-      '各路仇家/旧敌找上门 → 一个个碾压过去',
+      'Provoked by various small-time thugs right after returning home → One glance/one move subdues them',
+      'Former comrades/subordinates in trouble call for help → Rally old squad to handle everything',
+      'Looked down upon by mother-in-law or relatives as "just a soldier" → Reveal true identity and shock everyone',
+      'A major force foolishly provokes the protagonist\'s family or lover → Drop the disguise, crush an entire organization single-handedly',
+      'Various old enemies and grudges come knocking → Crush them one by one',
     ],
-    styleGuide: `爽文风格：战神归来流。核心是"低调回归但实力不允许，总有傻逼送脸上门"。
-写作要点：
-- 前期：过平静生活但麻烦不断。各种小冲突展示主角深不可测的实力——但只展露冰山一角。
-- 中期：为保护身边的人不得不逐步展现实力，引来更大的敌人和更复杂的局面。
-- 后期：旧敌全面来袭/国际势力卷入，主角全力出手，全面碾压所有敌人。
-- 每个冲突场景的公式：挑衅→隐忍→对方得寸进尺→一招解决→对方震惊后悔。
-- "一个能打的都没有"是核心气质。
-- 叙事语气：冷峻干脆，打斗描写利落。平时带点"看淡一切"的超然，动手时凌厉狠辣。用第二人称"你"。
-- 40岁后和平时期可多年度概括，但每次战斗/冲突必须详细描写。`,
+    styleGuide: `Power fantasy style: War God Returns. Core is "trying to return to a low-key life but strength won\'t allow it, and idiots keep bringing trouble to your doorstep."
+Writing Points:
+- Early: Seek a peaceful life but trouble keeps coming. Various minor conflicts showcase the protagonist\'s unfathomable strength — but only the tip of the iceberg.
+- Mid: Forced to gradually reveal strength to protect those around you, attracting greater enemies and more complex situations.
+- Late: Old enemies arrive en masse or international forces get involved. The protagonist unleashes full power and crushes all enemies completely.
+- Formula for every conflict scene: Provocation → Restraint → Opponent pushes too far → One move solution → Opponent shocked and regretful.
+- "Not a single one of you can fight" is the core vibe.
+- Narrative tone: Cold and crisp, fight descriptions clean and decisive. A detached "above it all" air in daily life, fierce and ruthless when fighting. Use second person "you".
+- After age 40, peaceful years can be summarized across multiple years, but every battle or conflict must be described in detail.`,
     summaryStartAge: 40,
     summaryYearSpan: 3,
   },
   {
     id: 'mega-rich',
-    name: '神豪人生',
+    name: 'Mega Rich Life',
     icon: '💰',
-    description: '被亲生父亲抛弃二十年的你，突然收到一封律师信——家族万亿遗产等你继承，条件是证明自己的能力。',
+    description: 'Abandoned by your biological father for twenty years, you suddenly receive a lawyer\'s letter — the family\'s trillion-dollar inheritance awaits you, on the condition that you prove your ability.',
     color: '#ffd600',
     maxAge: 80,
-    goldenFinger: '万亿遗产+商业天赋：隐形富豪家族的继承人，拥有巨额启动资金和商业资源。天生对市场有敏锐嗅觉，投资眼光毒辣。还有一位忠诚的老管家（实际上是家族培养的顶级商业顾问）辅助。',
+    goldenFinger: 'Trillion-Dollar Inheritance + Business Talent: Heir of a hidden wealthy family, possessing enormous startup capital and business resources. A naturally acute sense for the market and a sharp investment eye. Plus a loyal old butler (actually a top-tier business consultant trained by the family) to assist you.',
     coreTropes: [
-      '被人当成穷小子看不起 → 一掷千金全场震惊',
-      '竞争对手/反派用下三滥手段 → 用资本力量碾压',
-      '美女看到主角的财富和才华 → 主动靠近',
-      '商业上看似不可能的挑战 → 用天才商业头脑解决',
-      '家族内部争权夺利 → 用实力让所有质疑者闭嘴',
+      'Looked down upon as a poor nobody → Spend lavishly and shock everyone present',
+      'Competitors or villains use underhanded tactics → Crush them with the power of capital',
+      'Beautiful women see the protagonist\'s wealth and talent → Take the initiative to get close',
+      'Seemingly impossible business challenges → Solve them with genius business acumen',
+      'Power struggles within the family → Silence all doubters with strength',
     ],
-    styleGuide: `爽文风格：神豪/商业霸主流。核心是"钱不是问题，问题是钱太多不知道怎么花"。
-写作要点：
-- 前期：继承遗产，学习商业运作。被各种人看不起→用钱和商业头脑打脸。投资小项目获得巨大回报。
-- 中期：建立自己的商业帝国。收购/控股/上市，在商战中击败一个又一个对手。遇到真正的商业天才/豪门后代，强强对话。
-- 后期：成为商业教父。慈善事业、社会影响力、家族内部地位的终极确认。
-- 消费场景要写得有画面感（买豪车/豪宅/私人飞机/艺术品），让读者感受到"有钱真好"。
-- 不要只写花钱，商业智商和战略眼光才是核心竞争力。
-- 叙事语气：从容大气，运筹帷幄。商业决策要有逻辑性，不能全靠运气。用第二人称"你"。
-- 50岁后事业稳定期可多年度概括，但大型收购/商战/慈善活动必须详细。`,
+    styleGuide: `Power fantasy style: Mega Rich / Business Mogul. Core is "money is not the problem — the problem is having too much money and not knowing how to spend it."
+Writing Points:
+- Early: Inherit the estate, learn business operations. Looked down upon by various people → slap them with money and business acumen. Small investments yield massive returns.
+- Mid: Build your own business empire. Acquisitions, controlling stakes, IPOs — defeat one opponent after another in corporate warfare. Encounter true business geniuses and heirs of prestigious families for heavyweight clashes.
+- Late: Become a business godfather. Ultimate confirmation of charitable work, social influence, and status within the family.
+- Spending scenes should be vivid (buying luxury cars, mansions, private jets, art) — let readers feel "it\'s great to be rich."
+- Don\'t just write about spending money — business IQ and strategic vision are the core competitive advantages.
+- Narrative tone: Composed and magnanimous, orchestrating from behind the scenes. Business decisions must have logic, not rely on pure luck. Use second person "you".
+- After age 50, during career stability, multi-year summaries are fine, but major acquisitions, corporate battles, and charity events must be detailed.`,
     summaryStartAge: 50,
     summaryYearSpan: 4,
   },

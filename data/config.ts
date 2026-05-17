@@ -1,15 +1,15 @@
-// 游戏配置常量 - 反编译自 re.maa-ai.com
+// Game configuration constants - decompiled from re.maa-ai.com
 
 export const GAME_CONFIG = {
-  maxBaseAttribute: 10,      // 单项初始属性最大值
-  totalAttributePoints: 12,  // 初始分配总属性点
-  talentSelectCount: 3,      // 可选天赋数
-  decisionIntervalYears: [3, 5] as [number, number], // 每次决策的年数范围
-  aiMaxBatchYears: 10,       // AI 一次生成的最大年数
-  saveVersion: 2,            // 存档版本
+  maxBaseAttribute: 10,      // Maximum initial attribute value
+  totalAttributePoints: 12,  // Total initial attribute points to allocate
+  talentSelectCount: 3,      // Number of talents to select
+  decisionIntervalYears: [3, 5] as [number, number], // Year range for each decision interval
+  aiMaxBatchYears: 10,       // Maximum years AI generates in one batch
+  saveVersion: 2,            // Save file version
 } as const
 
-// 性别选项
+// Gender options
 export interface GenderOption {
   label: string
   icon: string
@@ -17,78 +17,78 @@ export interface GenderOption {
 }
 
 export const genderOptions: GenderOption[] = [
-  { label: "男", icon: "🧑", description: "男性的身体" },
-  { label: "女", icon: "👩", description: "女性的身体" },
-  { label: "其他", icon: "🧝", description: "不拘性别，自由灵魂" },
+  { label: "Male", icon: "🧑", description: "Male body" },
+  { label: "Female", icon: "👩", description: "Female body" },
+  { label: "Other", icon: "🧝", description: "Beyond gender, a free spirit" },
 ]
 
-// 种族选项 (各世界的特殊种族在下方定义)
+// Race options (special races per world defined below)
 export const raceOptions: Record<string, { label: string; icon: string; description: string }[]> = {
   modern: [
-    { label: "汉族", icon: "🏮", description: "中国主要民族" },
-    { label: "少数民族", icon: "🎭", description: "丰富多彩的少数民族文化" },
-    { label: "混血", icon: "🌍", description: "多元文化背景" },
+    { label: "Han Chinese", icon: "🏮", description: "Majority ethnic group of China" },
+    { label: "Ethnic Minority", icon: "🎭", description: "Rich and diverse ethnic minority culture" },
+    { label: "Mixed", icon: "🌍", description: "Multicultural background" },
   ],
   xianxia: [
-    { label: "凡人", icon: "👤", description: "普通凡人种族" },
-    { label: "灵体", icon: "✨", description: "天生灵体，修炼极快" },
-    { label: "妖族", icon: "🐉", description: "修炼成精的妖族" },
-    { label: "魔族", icon: "👹", description: "天生魔体" },
+    { label: "Mortal", icon: "👤", description: "Ordinary mortal race" },
+    { label: "Spirit Body", icon: "✨", description: "Innate spiritual body, cultivates extremely fast" },
+    { label: "Demon Beast", icon: "🐉", description: "Beast that cultivated into sentience" },
+    { label: "Demon", icon: "👹", description: "Innate demonic body" },
   ],
   isekai: [
-    { label: "原著主角", icon: "⭐", description: "原剧情的主角" },
-    { label: "炮灰", icon: "💀", description: "剧情里的炮灰角色" },
-    { label: "配角", icon: "🎭", description: "原著里的辅助角色" },
-    { label: "反派", icon: "😈", description: "原著中的反派" },
-    { label: "路人甲", icon: "👤", description: "原著里毫无存在感的路人" },
+    { label: "Original Protagonist", icon: "⭐", description: "The main character of the original story" },
+    { label: "Cannon Fodder", icon: "💀", description: "Expendable character in the story" },
+    { label: "Supporting Character", icon: "🎭", description: "Supporting role in the original work" },
+    { label: "Villain", icon: "😈", description: "The antagonist in the original story" },
+    { label: "Extra", icon: "👤", description: "A background character with no presence" },
   ],
   palace: [
-    { label: "秀女", icon: "🌸", description: "出身清白，选秀入宫" },
-    { label: "官家小姐", icon: "👑", description: "朝中重臣之女" },
-    { label: "商贾之女", icon: "💰", description: "富商之女，资财丰厚" },
-    { label: "宫女", icon: "🎀", description: "从宫女做起" },
+    { label: "Concubine Candidate", icon: "🌸", description: "Pure background, enters palace via selection" },
+    { label: "Noble Daughter", icon: "👑", description: "Daughter of a high-ranking official" },
+    { label: "Merchant's Daughter", icon: "💰", description: "Daughter of a wealthy merchant" },
+    { label: "Maid-in-Waiting", icon: "🎀", description: "Starting as a palace maid" },
   ],
   magic: [
-    { label: "人类", icon: "🧑", description: "普通人类法师" },
-    { label: "精灵", icon: "🧝", description: "长寿命，擅长魔法" },
-    { label: "矮人", icon: "⛏️", description: "善于锻造，抗魔" },
-    { label: "兽人", icon: "🦴", description: "体力强大" },
-    { label: "龙裔", icon: "🐉", description: "拥有龙的血脉" },
+    { label: "Human", icon: "🧑", description: "Ordinary human mage" },
+    { label: "Elf", icon: "🧝", description: "Long-lived, adept at magic" },
+    { label: "Dwarf", icon: "⛏️", description: "Skilled smiths, magic resistant" },
+    { label: "Orc", icon: "🦴", description: "Great physical strength" },
+    { label: "Dragonborn", icon: "🐉", description: "Has dragon bloodline" },
   ],
   medieval: [
-    { label: "贵族", icon: "👑", description: "出身高贵的贵族" },
-    { label: "骑士", icon: "⚔️", description: "荣誉至上的骑士" },
-    { label: "平民", icon: "👤", description: "普通平民出身" },
-    { label: "教士", icon: "⛪", description: "神职人员" },
-    { label: "商贾", icon: "💰", description: "通商致富的商人" },
+    { label: "Noble", icon: "👑", description: "Born into aristocracy" },
+    { label: "Knight", icon: "⚔️", description: "A knight bound by honor" },
+    { label: "Commoner", icon: "👤", description: "Of ordinary birth" },
+    { label: "Clergyman", icon: "⛪", description: "Member of the clergy" },
+    { label: "Merchant", icon: "💰", description: "A prosperous trader" },
   ],
   cyberpunk: [
-    { label: "街头小子", icon: "🔫", description: "混迹街头的底层" },
-    { label: "企业特工", icon: "🏢", description: "大企业的特工" },
-    { label: "自由黑客", icon: "💻", description: "不受约束的黑客" },
-    { label: "义体医生", icon: "🔧", description: "专业的义体医生" },
-    { label: "艺人", icon: "🎤", description: "夜之城中的表演者" },
+    { label: "Street Kid", icon: "🔫", description: "Lowlife of the streets" },
+    { label: "Corporate Agent", icon: "🏢", description: "Agent of a mega-corporation" },
+    { label: "Free Hacker", icon: "💻", description: "Unbound hacker" },
+    { label: "Ripperdoc", icon: "🔧", description: "Professional cyberware doctor" },
+    { label: "Entertainer", icon: "🎤", description: "Performer of Night City" },
   ],
   space: [
-    { label: "地球人", icon: "🌍", description: "出生在地球的人类" },
-    { label: "火星殖民者", icon: "🔴", description: "火星出生的殖民者" },
-    { label: "星际商人", icon: "🚀", description: "商人世家" },
-    { label: "外星混血", icon: "👽", description: "拥有外星血统" },
-    { label: "AI 觉醒者", icon: "🤖", description: "自我意识觉醒的 AI" },
+    { label: "Earthling", icon: "🌍", description: "Human born on Earth" },
+    { label: "Mars Colonist", icon: "🔴", description: "Colonist born on Mars" },
+    { label: "Starfarer", icon: "🚀", description: "From a merchant dynasty" },
+    { label: "Alien Hybrid", icon: "👽", description: "Has extraterrestrial blood" },
+    { label: "Awakened AI", icon: "🤖", description: "A self-aware AI" },
   ],
   wasteland: [
-    { label: "避难所居民", icon: "🏠", description: "来自地下避难所" },
-    { label: "废土原住民", icon: "🏜️", description: "世代生活在废土" },
-    { label: "游荡者", icon: "🎒", description: "四处流浪的幸存者" },
-    { label: "科研人员", icon: "🔬", description: "旧时代的科学家后代" },
-    { label: "变种人", icon: "🧬", description: "辐射导致的变异人类" },
+    { label: "Vault Dweller", icon: "🏠", description: "From an underground vault" },
+    { label: "Wasteland Native", icon: "🏜️", description: "Generations living in the wasteland" },
+    { label: "Wanderer", icon: "🎒", description: "A roaming survivor" },
+    { label: "Researcher", icon: "🔬", description: "Descendant of old-world scientists" },
+    { label: "Mutant", icon: "🧬", description: "Human mutated by radiation" },
   ],
 }
 
 export const customWorldRaceOptions = [
-  { label: "普通", icon: "👤", description: "最常见的种族" },
-  { label: "特殊", icon: "✨", description: "拥有特殊能力或背景" },
+  { label: "Common", icon: "👤", description: "The most common race" },
+  { label: "Special", icon: "✨", description: "Has special abilities or background" },
 ]
 
-// 游戏阶段枚举
+// Game phase enum
 export type GamePhase = 'idle' | 'attributes' | 'talents' | 'playing' | 'review'
