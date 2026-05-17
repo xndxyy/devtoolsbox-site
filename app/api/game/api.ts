@@ -95,9 +95,9 @@ export interface ReviewRequest {
 // AI API call wrapper
 // ============================================================
 
-const AI_API_BASE = process.env.AI_API_BASE || 'https://ark.cn-beijing.volces.com/api/v3'
+const AI_API_BASE = process.env.AI_API_BASE || 'https://api.deepseek.com/v1'
 const AI_API_KEY = process.env.AI_API_KEY || ''
-const AI_MODEL = process.env.AI_MODEL || 'doubao-seed-1-6-flash-250615'
+const AI_MODEL = process.env.AI_MODEL || 'deepseek-chat'
 
 interface ChatMessage {
   role: 'system' | 'user' | 'assistant'
