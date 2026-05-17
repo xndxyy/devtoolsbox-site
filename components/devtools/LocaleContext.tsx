@@ -19,7 +19,7 @@ export function LocaleProvider({
   children: ReactNode;
   initialLocale?: Locale;
 }) {
-  const [locale, setLocale_] = useState<Locale>(init ?? "zh");
+  const [locale, setLocale_] = useState<Locale>(init ?? "en");
 
   // Client-side: check localStorage for user override
   useEffect(() => {
