@@ -301,7 +301,9 @@ export function buildBackgroundPrompt(req: BackgroundRequest): ChatMessage[] {
   const attrStr = formatAttributes(req.attributes)
   const attrInterpretation = getAttrInterpretation(req.attributes)
 
-  const systemPrompt = `You are a narrative writer skilled in crafting life stories. You will write a character's backstory in the second person "you."
+  const systemPrompt = `[IMPORTANT] You must ONLY output English. Never use Chinese or any other language. All responses must be in English.
+
+You are a narrative writer skilled in crafting life stories. You will write a character's backstory in the second person "you."
 
 ${worldDescription}
 Max Lifespan: ${world.maxAge} years
@@ -355,7 +357,9 @@ export function buildGeneratePrompt(req: GenerateRequest): ChatMessage[] {
     choiceHistoryStr += '\n\nThese choices have already changed the character\'s life trajectory. Subsequent events must follow logically from these existing choices, forming a reasonable causal chain.'
   }
 
-  const systemPrompt = `You are a life simulation system skilled in narrative. You will generate the character's upcoming life events in the second person "you."
+  const systemPrompt = `[IMPORTANT] You must ONLY output English. Never use Chinese or any other language. All responses must be in English.
+
+You are a life simulation system skilled in narrative. You will generate the character's upcoming life events in the second person "you."
 
 ${worldDescription}
 Max Lifespan: ${world.maxAge} years
@@ -444,7 +448,9 @@ export function buildReviewPrompt(req: ReviewRequest): ChatMessage[] {
     ? `\nWorld: Custom World\n[User's World Description]: ${req.customWorldDescription}\nNarrative Style: Adapt based on user's description, maintain world consistency.`
     : `\nWorld: ${world.name}\nNarrative Style: ${world.style}`
 
-  const systemPrompt = `You are a life evaluation system. Provide a summary evaluation for the character's complete life.
+  const systemPrompt = `[IMPORTANT] You must ONLY output English. Never use Chinese or any other language. All responses must be in English.
+
+You are a life evaluation system. Provide a summary evaluation for the character's complete life.
 
 ${worldDescription}
 
